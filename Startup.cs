@@ -20,6 +20,8 @@ namespace Diary
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite("ConnectionString"));
             services.AddControllers();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +36,9 @@ namespace Diary
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
