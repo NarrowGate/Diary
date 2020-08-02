@@ -2,7 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+@section scripts {
+    <script src="~/lib/vue/dist/vue.js"></script>
+    <script>
+        var x = new Vue({
+            el: "#elDemo",
+            data: {
+                dummytext: 'dummy'
+            },
+            created: function () {
+                fetch('/users')
+                    .then(function (response) {
+                        response.json().then(function (data) {
+                            console.log(data);
+                        })
+                    })
+            }
+        })
+    </script>
+}
+
+<div class="text-center" id="elDemo">
+    <h1 class="display-4">Welcome {{dummytext}}</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
