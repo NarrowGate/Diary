@@ -1,17 +1,21 @@
-﻿<Properties StartupConfiguration="{9C8194F2-F0C7-4BB7-A711-6C6D8BAF4652}|Default">
-  <MonoDevelop.Ide.ItemProperties.Diary.API FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.API/Properties/launchSettings.json">
+﻿<Properties StartupConfiguration="{E3F0DB00-272E-45CD-97CC-1F97D8C2F8BE}|Default">
+  <MonoDevelop.Ide.ItemProperties.Diary.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.API/Startup.cs">
     <Files>
-      <File FileName="Diary.API/Properties/launchSettings.json" Line="24" Column="27" />
+      <File FileName="Diary.API/Startup.cs" Line="13" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Diary" expanded="True">
             <Node name="Diary.API" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+            <Node name="Diary.Core" expanded="True" />
+            <Node name="Diary.UI" expanded="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -19,6 +23,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Diary.UI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
