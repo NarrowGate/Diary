@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Diary.API.Data;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 
 namespace Diary.UI
@@ -35,6 +37,11 @@ namespace Diary.UI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStaticFiles(new StaticFileOptions()
+                {
+                    RequestPath = "/lib",
+                    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules/"))
+                });
             }
             else
             {
