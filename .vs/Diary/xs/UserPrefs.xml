@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{E3F0DB00-272E-45CD-97CC-1F97D8C2F8BE}|Default">
   <MonoDevelop.Ide.ItemProperties.Diary.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.API/Startup.cs">
-    <Files>
-      <File FileName="Diary.API/Startup.cs" Line="13" Column="36" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Diary" expanded="True">
             <Node name="Diary.API" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
               <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="Diary.Core" expanded="True" />
             <Node name="Diary.UI" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
