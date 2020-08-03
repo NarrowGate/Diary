@@ -12,24 +12,24 @@ namespace Diary.API.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IUsersRepository _usersRepository;
 
-        public UsersController(DataContext context)
+        public UsersController(IUsersRepository usersRepository)
         {
-            _context = context;
+            _usersRepository = usersRepository;
         }
 
         [HttpGet]
         public IActionResult GetUsers()
         {
-            var users = _context.Users.ToList();
+            var users = _usersRepository.GetUsers().ToList();
             return Ok(users);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            var user = _usersRepository.GetUsers().FirstOrDefault(x => x.Id == id);
             return Ok(user);
         }
     }
