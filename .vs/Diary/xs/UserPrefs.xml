@@ -1,31 +1,35 @@
 ﻿<Properties StartupConfiguration="{E3F0DB00-272E-45CD-97CC-1F97D8C2F8BE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.API/Controllers/UsersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.UI/Views/Home/Index.cshtml">
     <Files>
       <File FileName="Diary.UI/Startup.cs" Line="32" Column="10" />
-      <File FileName="Diary.UI/package.json" />
-      <File FileName="Diary.UI/Views/Shared/_Layout.cshtml" />
       <File FileName="Diary.UI/Views/Home/Index.cshtml" Line="29" Column="1" />
-      <File FileName="Diary.Core/Models/User.cs" Line="1" Column="1" />
-      <File FileName="Diary.Core/Models/Family.cs" Line="11" Column="10" />
       <File FileName="Diary.Core/Models/FamilyMember.cs" Line="11" Column="48" />
       <File FileName="Diary.API/Data/DataContext.cs" Line="14" Column="50" />
-      <File FileName="Diary.API/Controllers/UsersController.cs" Line="1" Column="1" />
+      <File FileName="Diary.API/Controllers/UsersController.cs" Line="9" Column="1" />
+      <File FileName="Diary.API/Controllers/FamilyController.cs" Line="22" Column="39" />
+      <File FileName="Diary.API/Data/IFamilyRepository.cs" Line="6" Column="39" />
+      <File FileName="Diary.API/Data/IUsersRepository.cs" Line="11" Column="9" />
+      <File FileName="Diary.API/Data/FamilyRepository.cs" Line="22" Column="40" />
+      <File FileName="Diary.API/Data/UsersRepository.cs" Line="21" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Diary" expanded="True">
             <Node name="Diary.API" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UsersController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
             </Node>
             <Node name="Diary.Core" expanded="True">
               <Node name="Models" expanded="True" />
             </Node>
             <Node name="Diary.UI" expanded="True">
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
