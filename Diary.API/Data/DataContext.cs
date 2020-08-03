@@ -11,5 +11,7 @@ namespace Diary.API.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Family> Family { get; set; }
+        public DbSet<FamilyMember> FamilyMembers { get; set; }
     }
 }
