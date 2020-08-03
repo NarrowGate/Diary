@@ -31,6 +31,7 @@ namespace Diary.UI
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IFamilyRepository, FamilyRepository>();
+            services.AddScoped<IFamilyMemberRepository, FamilyMemberRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

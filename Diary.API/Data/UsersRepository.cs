@@ -18,7 +18,7 @@ namespace Diary.API.Data
 
         public User GetUser(int id)
         {
-            return _context.Users.FirstOrDefault(x => x.Id == id);            
+            return _context.Users.FirstOrDefault(x => x.Id == id);     
         }
 
         public IEnumerable<User> GetUsers()
