@@ -2,7 +2,7 @@
 using Diary.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Diary.API.Data
+namespace Diary.DataAccess.SqlLite.Data
 {
     public class DataContext : DbContext
     {
@@ -15,3 +15,6 @@ namespace Diary.API.Data
         public DbSet<FamilyMember> FamilyMembers { get; set; }
     }
 }
+
+//dotnet ef migrations add testmigration
+//dotnet ef database update

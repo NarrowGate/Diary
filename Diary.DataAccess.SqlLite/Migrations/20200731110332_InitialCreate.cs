@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Diary.API.Migrations
+namespace Diary.DataAccess.SqlLite.Migrations
 {
     public partial class InitialCreate : Migration
     {

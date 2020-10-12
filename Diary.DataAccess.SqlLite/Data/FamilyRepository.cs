@@ -4,7 +4,7 @@ using System.Linq;
 using Diary.Core.Contracts;
 using Diary.Core.Models;
 
-namespace Diary.API.Data
+namespace Diary.DataAccess.SqlLite.Data
 {
     public class FamilyRepository : IFamilyRepository
     {

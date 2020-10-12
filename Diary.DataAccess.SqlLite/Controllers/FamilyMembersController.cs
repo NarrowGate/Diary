@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Diary.API.Data;
+using Diary.DataAccess.SqlLite.Data;
 using Diary.Core.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Diary.API.Controllers
+namespace Diary.DataAccess.SqlLite.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

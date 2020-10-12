@@ -6,7 +6,7 @@ using Diary.Core.Contracts;
 using Diary.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Diary.API.Data
+namespace Diary.DataAccess.SqlLite.Data
 {
     public class UsersRepository : IUsersRepository
     {

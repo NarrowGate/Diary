@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Diary.API\Diary.API.csproj">
+    <ProjectReference Include="..\Diary.DataAccess.SqlLite\Diary.DataAccess.SqlLite.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

@@ -1,6 +1,6 @@
 using System;
 
-namespace Diary.API
+namespace Diary.DataAccess.SqlLite
 {
     public class WeatherForecast
     {

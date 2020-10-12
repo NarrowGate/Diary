@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Diary.API.Controllers
+namespace Diary.DataAccess.SqlLite.Controllers
 {
     [ApiController]
     [Route("[controller]")]
