@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Diary.Core.Contracts;
 using Diary.Core.Models;
 
 namespace Diary.API.Data
@@ -14,7 +15,7 @@ namespace Diary.API.Data
             _context = context;
         }
 
-        FamilyMember IFamilyMemberRepository.GetFamilyMember(int id)
+        FamilyMember IFamilyMemberRepository.GetFamilyMem(int id)
         {
             return _context.FamilyMembers.FirstOrDefault(x => x.Id == id);
         }

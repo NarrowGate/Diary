@@ -30,7 +30,7 @@
                 fetch('/api/FamilyMembers/GetFamilyMembers')
                     .then(function (response) {
                         response.json().then(function (data) {
-                            console.log(data);
+                            console.log('/api/FamilyMembers/GetFamilyMembers', data);
                             this.familyMembers = data;
                             let nameId = document.getElementById("name");
                             let roleId = document.getElementById("role");

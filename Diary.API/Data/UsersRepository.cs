@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Diary.Core.Contracts;
 using Diary.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 

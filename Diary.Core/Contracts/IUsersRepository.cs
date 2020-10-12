@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Diary.Core.Models;
-using Microsoft.AspNetCore.Mvc;
 
-namespace Diary.API.Data
+namespace Diary.Core.Contracts
 {
     public interface IUsersRepository
     {

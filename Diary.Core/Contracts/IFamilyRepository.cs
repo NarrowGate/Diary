@@ -1,7 +1,7 @@
 ﻿using System;
 using Diary.Core.Models;
 
-namespace Diary.API.Data
+namespace Diary.Core.Contracts
 {
     public interface IFamilyRepository
     {

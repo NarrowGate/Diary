@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Diary.API.Data;
+using Diary.Core.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,10 +28,12 @@ namespace Diary.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetFamilyMember(int id)
+        public IActionResult GetFamilyMem(int id)
         {
-            var familyMember = _familyMemberRepository.GetFamilyMembers().FirstOrDefault(x => x.Id == id);
-            return Ok(familyMember);
+            //var familyMember = _familyMemberRepository.GetFamilyMembers().FirstOrDefault(x => x.Id == id);
+            //return Ok(familyMember);
+           
+            return Ok(_familyMemberRepository.GetFamilyMem(id));
         }
 
     }
