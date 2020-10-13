@@ -7,19 +7,28 @@
     <h1 class="display-4">Welcome {{dummytext}}</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    <div>
-        <input id="name" />
-        <input id="role" />
-        <input id="gender" />
-        <input id="description" />
-        <input id="occupation" />
+    <div v-for="member of familyMembers">
+        <input :value="member.id" id="a" />
+        <input :value="member.name" id="b" />
+        <input :value="member.role" id="c"/>
+        <input :value="member.gender" id="d"/>
+        <input :value="member.description" id="e"/>
+        <input :value="member.occupation" id="f"/>
     </div>
 
+    <div>
+        <input ref="a" />
+        <input ref="b" />
+        <input ref="c"/>
+        <input ref="d"/>
+        <input ref="e"/>
+    </div>
+    <button @@click="addMember" name="addMember" style="width: 100px; height: 30px"></button>
 </div>
 
 @section scripts {
     <script src="~/lib/vue/dist/vue.js"></script>
-    <script>var x = new Vue({
+    <script>new Vue({
             el: "#elDemo",
             data: {
                 dummytext: 'dummy',
@@ -27,31 +36,46 @@
 
             },
             created: function () {
-                fetch('/api/FamilyMembers/GetFamilyMembers')
+
+                let vi = this;
+                fetch('/api/FamilyMembers/')
                     .then(function (response) {
                         response.json().then(function (data) {
-                            console.log('/api/FamilyMembers/GetFamilyMembers', data);
-                            this.familyMembers = data;
-                            let nameId = document.getElementById("name");
-                            let roleId = document.getElementById("role");
-                            let genderId = document.getElementById("gender");
-                            let descriptionId = document.getElementById("description");
-                            let occupationId = document.getElementById("occupation");
-
-                            nameId.value = data[3].name;
-                            roleId.value = data[3].role;
-                            genderId.value = data[3].gender;
-                            descriptionId.value = data[3].description;
-                            occupationId.value = data[3].occupation;
+                            vi.familyMembers = data;
+                            this.familyMembers = [{ id: '2', name: 'Bob', role: 'Roll', gender: 'Male', description: 'desc', occupation: 'sdfsdfs' }];
 
                         })
-                    })
-                fetch('/api/FamilyMembers/GetFamilyMember/5')
-                    .then(function (response) {
+                    });
+            },
+            methods: {
+                addMember: function () {
+                    debugger;
+                    let vi = this;
+
+                    fetch('/api/FamilyMembers/AddMember', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            'name': vi.$refs.a.value,
+                            'role': vi.$refs.b.value,
+                            'gender': vi.$refs.c.value,
+                            'occupation': vi.$refs.d.value,
+                            'description': vi.$refs.e.value
+                        })
+                    }).then(function (response) {
                         response.json().then(function (data) {
-                            console.log('/api/FamilyMember', data);
+                            vi.familyMembers = data;
+                            vi.$refs.a.value = "";
+                            vi.$refs.b.value = "";
+                            vi.$refs.c.value = "";
+                            vi.$refs.d.value = "";
+                            vi.$refs.e.value = "";
                         })
                     })
+                }
             }
         })</script>
 }

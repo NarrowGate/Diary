@@ -8,5 +8,6 @@ namespace Diary.Core.Contracts
     {
         public IEnumerable<FamilyMember> GetFamilyMembers();
         public FamilyMember GetFamilyMem(int id);
+        public IEnumerable<FamilyMember> AddMember(FamilyMember member);
     }
 }

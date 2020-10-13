@@ -6,6 +6,8 @@ using Diary.DataAccess.SqlLite.Data;
 using Diary.Core.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Diary.Core.Models;
+using Diary.Core.DTO;
 
 namespace Diary.DataAccess.SqlLite.Controllers
 {
@@ -30,10 +32,30 @@ namespace Diary.DataAccess.SqlLite.Controllers
         [HttpGet("{id}")]
         public IActionResult GetFamilyMem(int id)
         {
-            //var familyMember = _familyMemberRepository.GetFamilyMembers().FirstOrDefault(x => x.Id == id);
-            //return Ok(familyMember);
-           
             return Ok(_familyMemberRepository.GetFamilyMem(id));
+        }
+
+        [HttpPost("AddMember")]
+        public ActionResult AddMember(TesterDto data)
+        {
+
+            FamilyMember newMember = new FamilyMember();
+
+            newMember.Name = data.Name;
+            newMember.Role = data.Role;
+            newMember.Gender = data.Gender;
+            newMember.Occupation = data.Occupation;
+            newMember.Description = data.Description;
+
+            _familyMemberRepository.AddMember(newMember);
+
+
+            var familyMembers = _familyMemberRepository.GetFamilyMembers().ToList();
+            //return familyMembers.ToHttpResponse();
+
+            return new ObjectResult(familyMembers);
+
+            //return RedirectToAction("GetFamilyMembers", "FamilyMembers");
         }
 
     }
