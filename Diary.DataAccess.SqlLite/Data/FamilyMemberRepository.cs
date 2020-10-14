@@ -17,23 +17,19 @@ namespace Diary.DataAccess.SqlLite.Data
             this.dbSet = context.Set<FamilyMember>();
         }
 
-        FamilyMember IFamilyMemberRepository.GetFamilyMem(int id)
+        public FamilyMember GetFamilyMember(int id)
         {
             return _context.FamilyMembers.FirstOrDefault(x => x.Id == id);
         }
 
-        IEnumerable<FamilyMember> IFamilyMemberRepository.AddMember(FamilyMember newMember)
+        public IEnumerable<FamilyMember> AddMember(FamilyMember newMember)
         {
-
-
             dbSet.Add(newMember);
-
             _context.SaveChanges();
-
             return dbSet;
         }
         
-        IEnumerable<FamilyMember> IFamilyMemberRepository.GetFamilyMembers()
+        public IEnumerable<FamilyMember> GetFamilyMembers()
         {
             return _context.FamilyMembers;
         }

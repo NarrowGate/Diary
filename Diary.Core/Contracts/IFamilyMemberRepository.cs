@@ -7,7 +7,7 @@ namespace Diary.Core.Contracts
     public interface IFamilyMemberRepository
     {
         public IEnumerable<FamilyMember> GetFamilyMembers();
-        public FamilyMember GetFamilyMem(int id);
+        public FamilyMember GetFamilyMember(int id);
         public IEnumerable<FamilyMember> AddMember(FamilyMember member);
     }
 }

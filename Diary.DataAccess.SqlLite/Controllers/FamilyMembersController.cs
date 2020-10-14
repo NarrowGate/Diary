@@ -32,30 +32,24 @@ namespace Diary.DataAccess.SqlLite.Controllers
         [HttpGet("{id}")]
         public IActionResult GetFamilyMem(int id)
         {
-            return Ok(_familyMemberRepository.GetFamilyMem(id));
+            var member = _familyMemberRepository.GetFamilyMember(id);
+            return Ok(member);
         }
 
         [HttpPost("AddMember")]
-        public ActionResult AddMember(TesterDto data)
+        public ActionResult AddMember(MemberToAddDto member)
         {
-
-            FamilyMember newMember = new FamilyMember();
-
-            newMember.Name = data.Name;
-            newMember.Role = data.Role;
-            newMember.Gender = data.Gender;
-            newMember.Occupation = data.Occupation;
-            newMember.Description = data.Description;
+            FamilyMember newMember = new FamilyMember {
+                Name = member.Name,
+                Role = member.Role,
+                Gender = member.Gender,
+                Occupation = member.Occupation,
+                Description = member.Description
+            };
 
             _familyMemberRepository.AddMember(newMember);
-
-
             var familyMembers = _familyMemberRepository.GetFamilyMembers().ToList();
-            //return familyMembers.ToHttpResponse();
-
             return new ObjectResult(familyMembers);
-
-            //return RedirectToAction("GetFamilyMembers", "FamilyMembers");
         }
 
     }

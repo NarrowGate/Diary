@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Diary.Core.DTO
 {
-    public class TesterDto
+    public class MemberToAddDto
     {
         public string Name { get; set; }
         public string Role { get; set; }

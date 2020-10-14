@@ -30,7 +30,6 @@ namespace Diary.UI
         {
             services.AddControllersWithViews();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IFamilyRepository, FamilyRepository>();
             services.AddScoped<IFamilyMemberRepository, FamilyMemberRepository>();
         }
