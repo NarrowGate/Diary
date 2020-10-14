@@ -9,5 +9,6 @@ namespace Diary.Core.Contracts
         public IEnumerable<FamilyMember> GetFamilyMembers();
         public FamilyMember GetFamilyMember(int id);
         public IEnumerable<FamilyMember> AddMember(FamilyMember member);
+        public FamilyMember EditMember(FamilyMember member);
     }
 }

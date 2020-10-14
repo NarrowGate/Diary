@@ -52,5 +52,22 @@ namespace Diary.DataAccess.SqlLite.Controllers
             return new ObjectResult(familyMembers);
         }
 
+        [HttpPost("EditMember")]
+        public ActionResult EditMember(MemberToEditDto member)
+        {
+            int id = Int32.Parse(member.Id);
+            FamilyMember updatedMember = new FamilyMember
+            {
+                Id = id,
+                Name = member.Name,
+                Role = member.Role,
+                Gender = member.Gender,
+                Occupation = member.Occupation,
+                Description = member.Description
+            };
+            FamilyMember uM = _familyMemberRepository.EditMember(updatedMember);
+            return new ObjectResult(uM);
+        }
+
     }
 }

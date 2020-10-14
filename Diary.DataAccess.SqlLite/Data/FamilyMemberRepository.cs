@@ -28,7 +28,17 @@ namespace Diary.DataAccess.SqlLite.Data
             _context.SaveChanges();
             return dbSet;
         }
-        
+
+        public FamilyMember EditMember(FamilyMember member)
+        {
+            var memberTobeUpdated = _context.FamilyMembers.FirstOrDefault(x => x.Id == member.Id);
+            memberTobeUpdated.Name = member.Name;
+
+            //dbSet.Add(newMember);
+            _context.SaveChanges();
+            return memberTobeUpdated;
+        }
+
         public IEnumerable<FamilyMember> GetFamilyMembers()
         {
             return _context.FamilyMembers;
