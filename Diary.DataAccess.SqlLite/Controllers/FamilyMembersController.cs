@@ -69,5 +69,22 @@ namespace Diary.DataAccess.SqlLite.Controllers
             return new ObjectResult(uM);
         }
 
+        [HttpPost("DeleteMember")]
+        public ActionResult DeleteMember(MemberToEditDto member)
+        {
+            int id = Int32.Parse(member.Id);
+            FamilyMember memberToDelete = new FamilyMember
+            {
+                Id = id,
+                Name = member.Name,
+                Role = member.Role,
+                Gender = member.Gender,
+                Occupation = member.Occupation,
+                Description = member.Description
+            };
+            FamilyMember uM = _familyMemberRepository.DeleteMember(memberToDelete);
+            return new ObjectResult(uM);
+        }
+
     }
 }

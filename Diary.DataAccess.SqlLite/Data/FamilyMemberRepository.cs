@@ -39,6 +39,15 @@ namespace Diary.DataAccess.SqlLite.Data
             return memberTobeUpdated;
         }
 
+        public FamilyMember DeleteMember(FamilyMember member)
+        {
+            var memberTobeDeleted = _context.FamilyMembers.FirstOrDefault(x => x.Id == member.Id);
+
+            dbSet.Remove(memberTobeDeleted);
+            _context.SaveChanges();
+            return memberTobeDeleted;
+        }
+
         public IEnumerable<FamilyMember> GetFamilyMembers()
         {
             return _context.FamilyMembers;

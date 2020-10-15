@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{E3F0DB00-272E-45CD-97CC-1F97D8C2F8BE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.Core/DTO/MemberToEditDto.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs">
     <Files>
-      <File FileName="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" Line="33" Column="10" />
-      <File FileName="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" Line="56" Column="63" />
-      <File FileName="Diary.UI/Views/Home/Index.cshtml" Line="73" Column="51" />
-      <File FileName="Diary.Core/Contracts/IFamilyMemberRepository.cs" Line="12" Column="40" />
-      <File FileName="Diary.Core/DTO/MemberToEditDto.cs" Line="5" Column="6" />
+      <File FileName="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" Line="43" Column="1" />
+      <File FileName="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" Line="56" Column="62" />
+      <File FileName="Diary.UI/Views/Home/Index.cshtml" Line="145" Column="61" />
+      <File FileName="Diary.Core/Contracts/IFamilyMemberRepository.cs" Line="11" Column="73" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,12 +12,13 @@
           <Node name="Diary" expanded="True">
             <Node name="Diary.Core" expanded="True">
               <Node name="Contracts" expanded="True" />
-              <Node name="DTO" expanded="True">
-                <Node name="MemberToEditDto.cs" selected="True" />
-              </Node>
+              <Node name="DTO" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
             <Node name="Diary.DataAccess.SqlLite" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="FamilyMembersController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
             </Node>
             <Node name="Diary.UI" expanded="True">
@@ -36,11 +36,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" relfile="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" line="57" column="9" />
-      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" relfile="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" line="33" column="9" />
-      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" relfile="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" line="34" column="13" />
-      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" relfile="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" line="35" column="13" />
-      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" relfile="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" line="39" column="13" />
+      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" relfile="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" line="43" column="9" />
+      <Breakpoint file="/Users/melvinwilson/Documents/repos/Diary/Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" relfile="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" line="74" column="9" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
