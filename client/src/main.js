@@ -2,6 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 
 new Vue({
-  el: '#app1',
+  el: '#app',
   render: h => h(App)
 })
