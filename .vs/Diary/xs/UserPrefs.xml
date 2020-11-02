@@ -3,24 +3,13 @@
     <Files>
       <File FileName="Diary.DataAccess.SqlLite/Data/FamilyMemberRepository.cs" Line="43" Column="1" />
       <File FileName="Diary.DataAccess.SqlLite/Controllers/FamilyMembersController.cs" Line="56" Column="62" />
-      <File FileName="Diary.UI/Views/Home/Index.cshtml" Line="145" Column="61" />
-      <File FileName="Diary.Core/Contracts/IFamilyMemberRepository.cs" Line="11" Column="73" />
+      <File FileName="Diary.UI/Views/Home/Index.cshtml" />
+      <File FileName="Diary.Core/Contracts/IFamilyMemberRepository.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Diary" expanded="True">
-            <Node name="Diary.Core" expanded="True">
-              <Node name="Contracts" expanded="True" />
-              <Node name="DTO" expanded="True" />
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="Diary.DataAccess.SqlLite" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="FamilyMembersController.cs" selected="True" />
-              </Node>
-              <Node name="Data" expanded="True" />
-            </Node>
             <Node name="Diary.UI" expanded="True">
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
