@@ -1,7 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
 
+<div id="app1"></div>
 
 <div class="text-center" id="elDemo">
     <h1 class="display-4">Welcome {{dummytext}}</h1>
@@ -22,14 +21,16 @@
     <div>
         <input ref="a" />
         <input ref="b" />
-        <input ref="c"/>
-        <input ref="d"/>
-        <input ref="e"/>
+        <input ref="c" />
+        <input ref="d" />
+        <input ref="e" />
     </div>
     <button @@click="addMember" name="addMember" style="width: 100px; height: 30px" value="Add"></button>
 </div>
 
 @section scripts {
+    <script src="~/dist/build.js"></script>
+    
     <script src="~/lib/vue/dist/vue.js"></script>
     <script>new Vue({
             el: "#elDemo",

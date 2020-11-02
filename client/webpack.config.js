@@ -1,10 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
+var WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    // path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../Diary.UI/wwwroot/dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -75,15 +77,18 @@ module.exports = {
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true
-  },
+  // devServer: {
+  //   historyApiFallback: true,
+  //   noInfo: true,
+  //   overlay: true   
+  // },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new WriteFilePlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
