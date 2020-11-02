@@ -32,6 +32,8 @@ namespace Diary.UI
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IFamilyRepository, FamilyRepository>();
             services.AddScoped<IFamilyMemberRepository, FamilyMemberRepository>();
+            services.AddCors();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +55,8 @@ namespace Diary.UI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             app.UseStaticFiles();
 
             app.UseRouting();
