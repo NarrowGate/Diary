@@ -11,8 +11,8 @@
         <input :value="member.description" name="description" id="e" />
         <input :value="member.occupation" name="occupation" id="f" />
 
-        <button style="width: 50px; height: 30px" value="Edit" @@click="updateMember">Edit</button>
-        <button style="width: 50px; height: 30px" value="Delete" @@click="deleteMember">Delete</button>
+        <button style="width: 50px; height: 30px" value="Edit" @click="updateMember">Edit</button>
+        <button style="width: 50px; height: 30px" value="Delete" @click="deleteMember">Delete</button>
     </div>
 
     <div>
@@ -22,7 +22,7 @@
         <input ref="d" />
         <input ref="e" />
     </div>
-    <button @@click="addMember" name="addMember" style="width: 100px; height: 30px" value="Add"></button>
+    <button @click="addMember" name="addMember" style="width: 100px; height: 30px" value="Add"></button>
 </div>
 </template>
 
@@ -32,17 +32,17 @@ export default {
             data() {
               return {
                 dummytext: 'dummy',
-                familyMembers: []
+                familyMembers: [],
+                apiUrl:'https://localhost:2014/api/' 
               }
             },
             created: function () {
 
                 let vi = this;
-                fetch('https://localhost:2014/api/FamilyMembers/',)
+                fetch(`${this.apiUrl}FamilyMembers/`)
                     .then(function (response) {
                         response.json().then(function (data) {
                             vi.familyMembers = data;
-                            this.familyMembers = [{ id: '2', name: 'Bob', role: 'Roll', gender: 'Male', description: 'desc', occupation: 'sdfsdfs' }];
 
                         })
                     });
@@ -52,7 +52,7 @@ export default {
                     debugger;
                     let vi = this;
 
-                    fetch('/api/FamilyMembers/AddMember', {
+                    fetch(`${this.apiUrl}FamilyMembers/AddMember`, {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -100,7 +100,7 @@ export default {
                     debugger;
 
 
-                    fetch('/api/FamilyMembers/EditMember', {
+                    fetch(`${this.apiUrl}FamilyMembers/EditMember`, {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -133,7 +133,7 @@ export default {
                         "Occupation": memberOccupation
                     };
 
-                    fetch('/api/FamilyMembers/DeleteMember', {
+                    fetch(`${this.apiUrl}FamilyMembers/DeleteMember`, {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
