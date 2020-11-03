@@ -1,5 +1,5 @@
 <template>
-<div class="text-center">
+<div class="text-center container-fluid">
     <h1 class="display-4">Welcome {{dummytext}}</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
@@ -155,6 +155,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import'~bootstrap/dist/css/bootstrap.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
