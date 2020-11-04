@@ -1,5 +1,5 @@
 import User from './components/User.vue';
-import Members from './components/Members.vue';
+import Members from './components/members/Members.vue';
 
 export const routes = [
     { path:'/user', component: User },
