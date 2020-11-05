@@ -1,7 +1,17 @@
 <template>
-    <span class="edit d-flex justify-content-center align-items-center" title="Edit" @click="editFn">
+    <span class="edit d-flex justify-content-center align-items-center" title="Edit" @click="openModal">
         <i class="fas fa-pen"></i>
-        <modal :open="modalOpen" @close="closeModal"></modal>
+        <modal :open="modalOpen" @close="closeModal" @commit="save">
+            <template slot="title">Edit Member</template>
+            <template slot="body">
+                <input :value="member.id" name="id" class="" id="a" />
+                <input :value="member.name" name="name" class="" id="b" />
+                <input :value="member.role" name="role" class="" id="c" />
+                <input :value="member.gender" name="gender" class="" id="d" />
+                <input :value="member.description" name="description" class="" id="e" />
+                <input :value="member.occupation" name="occupation" class="" id="f" />
+            </template>
+        </modal>
     </span>      
 </template>
 
@@ -16,36 +26,61 @@
 
         data() {
             return {
-                modalOpen: false
+                modalOpen: false,
+                apiUrl:'https://localhost:2014/api/' 
             }
         },
 
+        props: ['member'],
+
         methods: {
-            editFn(e) {
-                let parentDiv = e.target.closest('div');
+
+            openModal() {
                 this.modalOpen = true;
-
-                // let memberId = parentDiv.querySelector('input[name="id"]').value;
-                // let memberName = parentDiv.querySelector('input[name="name"]').value;
-                // let memberRole = parentDiv.querySelector('input[name="role"]').value;
-                // let memberGender = parentDiv.querySelector('input[name="gender"]').value;
-                // let memberDescription = parentDiv.querySelector('input[name="description"]').value;
-                // let memberOccupation = parentDiv.querySelector('input[name="occupation"]').value;
-
-                // let updatedMember = {
-                //     "Id": memberId,
-                //     "Name": memberName,
-                //     "Role": memberRole,
-                //     "Gender": memberGender,
-                //     "Description": memberDescription,
-                //     "Occupation": memberOccupation
-                // };
-                // this.$emit('memberEdited', updatedMember);
             },
 
             closeModal() {
                 this.modalOpen = false;
+            },            
+
+            save() {
+
+                let v = this
+
+                let modalDom = this.$el;
+
+                let memberId = modalDom.querySelector('input[name="id"]').value;
+                let memberName = modalDom.querySelector('input[name="name"]').value;
+                let memberRole = modalDom.querySelector('input[name="role"]').value;
+                let memberGender = modalDom.querySelector('input[name="gender"]').value;
+                let memberDescription = modalDom.querySelector('input[name="description"]').value;
+                let memberOccupation = modalDom.querySelector('input[name="occupation"]').value;
+
+                let updatedMember = {
+                    "Id": memberId,
+                    "Name": memberName,
+                    "Role": memberRole,
+                    "Gender": memberGender,
+                    "Description": memberDescription,
+                    "Occupation": memberOccupation
+                };
+
+                fetch(`${this.apiUrl}FamilyMembers/EditMember`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedMember)
+                }).then(function (response) {
+                    response.json().then(function (data) {
+                        v.modalOpen = false;
+                    })
+                })
+
             }
+
+
         }
         
     }

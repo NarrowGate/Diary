@@ -23,7 +23,7 @@
                 <td><input :value="member.description" name="description" class="" id="e" /></td>
                 <td><input :value="member.occupation" name="occupation" class="" id="f" /></td>
                 <td class="d-flex justify-content-between">
-                    <edit-member @memberEdited="updateMember"></edit-member>
+                    <edit-member :member="member"></edit-member>
                     <delete-member @memberDeleted="deleteMember"></delete-member>
                 </td>
             </tr>
@@ -93,19 +93,6 @@ export default {
                     vi.$refs.c.value = "";
                     vi.$refs.d.value = "";
                     vi.$refs.e.value = "";
-                })
-            })
-        },
-        updateMember: function (member) {
-            fetch(`${this.apiUrl}FamilyMembers/EditMember`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(member)
-            }).then(function (response) {
-                response.json().then(function (data) {
                 })
             })
         },
