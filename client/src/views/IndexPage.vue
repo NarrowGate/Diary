@@ -21,7 +21,8 @@
                     <router-view></router-view>
                 </main>
             </div>
-        </div>    
+        </div> 
+        <portal-target name="modals"></portal-target>   
     </div>
 </template>
 
