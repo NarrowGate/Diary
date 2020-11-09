@@ -1,15 +1,40 @@
 <template>
-    <span class="delete d-flex justify-content-center align-items-center" title="Delete" @click="delFn">
+    <span class="delete d-flex justify-content-center align-items-center" title="Delete" @click="openModal">
         <i class="far fa-trash-alt"></i>
+        <modal :open="modalOpen" @close="closeModal" @commit="delFn">
+            <template slot="title">Delete the member {{this.memberName}}?</template>
+        </modal>
     </span>
 </template>
 
 <script>
-    export default {
+    import Modal from '../utilities/Modal.vue';
 
+    export default {
+        components: {
+            Modal
+        },
+        data() {
+            return {
+                modalOpen: false
+            }
+        },
+        props: {
+            memberName: {
+                type: String
+            },
+        },
         methods: {
-            delFn(e) {
-                let parentDiv = e.target.closest('div');
+            openModal() {
+                this.modalOpen = true;
+            },
+
+            closeModal() {
+                this.modalOpen = false;
+            },    
+
+            delFn() {
+                let parentDiv = this.$el.closest('tr');
 
                 let memberId = parentDiv.querySelector('input[name="id"]').value;
                 let memberName = parentDiv.querySelector('input[name="name"]').value;
@@ -26,8 +51,9 @@
                     "Description": memberDescription,
                     "Occupation": memberOccupation
                 };
+
                 this.$emit('memberDeleted', memberToDelete);
-            }
+            }            
         }
         
     }

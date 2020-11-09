@@ -24,7 +24,7 @@
                 <td><input :value="member.occupation" name="occupation" class="" id="f" /></td>
                 <td class="d-flex justify-content-between">
                     <edit-member :member="member"></edit-member>
-                    <delete-member @memberDeleted="deleteMember"></delete-member>
+                    <delete-member @memberDeleted="deleteMember" :memberName="member.name"></delete-member>
                 </td>
             </tr>
 
