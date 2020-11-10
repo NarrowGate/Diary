@@ -38,6 +38,8 @@ import EditMember from './EditMember.vue';
 import DeleteMember from './DeleteMember.vue';
 import AddMember from './AddMember.vue';
 
+import MembersService from '../../services/MembersService.js';
+
 
 export default {
 
@@ -49,54 +51,26 @@ export default {
 
     data() {
       return {
-        familyMembers: [],
-        apiUrl:'https://localhost:2014/api/' 
+        familyMembers: []
       }
     },
     created: function () {
-
-        let vi = this;
-        fetch(`${this.apiUrl}FamilyMembers/`)
-            .then(function (response) {
-                response.json().then(function (data) {
-                    vi.familyMembers = data;
-                })
-            });
+        MembersService.getMembers().then(response => {
+            this.familyMembers = response.data;
+        })
     },
     methods: {
         addMember: function (member) {
-            let vi = this;
-
-            fetch(`${this.apiUrl}FamilyMembers/AddMember`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(member)
-            }).then(function (response) {
-                response.json().then(function (data) {
-                    console.log('Member added');
-                })
+            MembersService.addMember(member).then(response => {
             })
         },
         deleteMember: function (member) {
-            let vi = this;
             let memberId = member.Id;
-            fetch(`${this.apiUrl}FamilyMembers/DeleteMember`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(member)
-            }).then(function (response) {
-                response.json().then(function (data) {
-                    vi.familyMembers.forEach((member, index) => {
-                        if (member.id == memberId) {
-                            vi.familyMembers.splice(index, 1);
-                        }
-                    })
+            MembersService.deleteMember(member).then(response => {
+                this.familyMembers.forEach((member, index) => {
+                    if (member.id == memberId) {
+                        this.familyMembers.splice(index, 1);
+                    }
                 })
             })
         }

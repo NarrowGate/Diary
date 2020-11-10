@@ -17,6 +17,8 @@
 
 <script>
     import Modal from '../utilities/Modal.vue';
+    import MembersService from '../../services/MembersService.js';
+
 
     export default {
 
@@ -26,8 +28,7 @@
 
         data() {
             return {
-                modalOpen: false,
-                apiUrl:'https://localhost:2014/api/' 
+                modalOpen: false
             }
         },
 
@@ -44,10 +45,7 @@
             },            
 
             save() {
-
-                let v = this
-
-                let modalDom = this.$el;
+                let modalDom = document.querySelector('.modal-body');
 
                 let memberId = modalDom.querySelector('input[name="id"]').value;
                 let memberName = modalDom.querySelector('input[name="name"]').value;
@@ -65,22 +63,11 @@
                     "Occupation": memberOccupation
                 };
 
-                fetch(`${this.apiUrl}FamilyMembers/EditMember`, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedMember)
-                }).then(function (response) {
-                    response.json().then(function (data) {
-                        v.modalOpen = false;
-                    })
+                MembersService.editMember(updatedMember).then(response => {
+                    this.modalOpen = false;;
                 })
 
             }
-
-
         }
         
     }
