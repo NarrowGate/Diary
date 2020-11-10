@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="display-4">My members</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 member">My members <add-member @addMemberEvt="addMember"></add-member></h1>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -30,26 +30,21 @@
 
         </tbody>
     </table>
-    <div>
-        <input ref="a" />
-        <input ref="b" />
-        <input ref="c" />
-        <input ref="d" />
-        <input ref="e" />
-    </div>
-    <button @click="addMember" name="addMember" style="width: 100px; height: 30px" value="Add"></button>
   </div>
 </template>
 
 <script>
 import EditMember from './EditMember.vue';
 import DeleteMember from './DeleteMember.vue';
+import AddMember from './AddMember.vue';
+
 
 export default {
 
     components: {
         EditMember,
-        DeleteMember
+        DeleteMember,
+        AddMember
     },
 
     data() {
@@ -69,7 +64,7 @@ export default {
             });
     },
     methods: {
-        addMember: function () {
+        addMember: function (member) {
             let vi = this;
 
             fetch(`${this.apiUrl}FamilyMembers/AddMember`, {
@@ -78,21 +73,10 @@ export default {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    'name': vi.$refs.a.value,
-                    'role': vi.$refs.b.value,
-                    'gender': vi.$refs.c.value,
-                    'occupation': vi.$refs.d.value,
-                    'description': vi.$refs.e.value
-                })
+                body: JSON.stringify(member)
             }).then(function (response) {
                 response.json().then(function (data) {
-                    vi.familyMembers = data;
-                    vi.$refs.a.value = "";
-                    vi.$refs.b.value = "";
-                    vi.$refs.c.value = "";
-                    vi.$refs.d.value = "";
-                    vi.$refs.e.value = "";
+                    console.log('Member added');
                 })
             })
         },
@@ -119,3 +103,12 @@ export default {
     }
 }
 </script>
+
+<style>
+
+h1.member {
+    display: flex;
+    align-items: center;
+}
+
+</style>
