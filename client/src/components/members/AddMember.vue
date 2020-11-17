@@ -44,8 +44,7 @@ export default {
                 'occupation': this.$refs.d.value,
                 'description': this.$refs.e.value           
            }
-
-           this.$emit('addMemberEvt', member)
+           this.$store.dispatch('addMember', member).then(res => this.closeModal());            
         } 
     },
 };

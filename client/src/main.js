@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import PortalVue from 'portal-vue';
 import App from './App.vue';
 import { routes } from './routes.js';
-import store from './store.js';
+import { store } from './store.js';
 
 Vue.use(VueRouter);
 Vue.use(PortalVue);

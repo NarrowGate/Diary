@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="display-4 member">My members <add-member @addMemberEvt="addMember"></add-member></h1>
+    <h1 class="display-4 member">My members <add-member></add-member></h1>
 
     <table class="table">
         <thead class="thead-dark">
@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="member of familyMembers" :key="member.id" ref="member">
+            <tr v-for="member of allMembers" :key="member.id" ref="member">
                 <td><input :value="member.id" name="id" class="" id="a" /></td>
                 <td><input :value="member.name" name="name" class="" id="b" /></td>
                 <td><input :value="member.role" name="role" class="" id="c" /></td>
@@ -24,7 +24,7 @@
                 <td><input :value="member.occupation" name="occupation" class="" id="f" /></td>
                 <td class="d-flex justify-content-between">
                     <edit-member :member="member"></edit-member>
-                    <delete-member @memberDeleted="deleteMember" :memberName="member.name"></delete-member>
+                    <delete-member :memberName="member.name"></delete-member>
                 </td>
             </tr>
 
@@ -37,8 +37,6 @@
 import EditMember from './EditMember.vue';
 import DeleteMember from './DeleteMember.vue';
 import AddMember from './AddMember.vue';
-
-import MembersService from '../../services/MembersService.js';
 
 
 export default {
@@ -55,27 +53,11 @@ export default {
       }
     },
     created: function () {
-        MembersService.getMembers().then(response => {
-            this.familyMembers = response.data;
-        })
-
         this.$store.dispatch('getAllMembers');
-
     },
-    methods: {
-        addMember: function (member) {
-            MembersService.addMember(member).then(response => {
-            })
-        },
-        deleteMember: function (member) {
-            let memberId = member.Id;
-            MembersService.deleteMember(member).then(response => {
-                this.familyMembers.forEach((member, index) => {
-                    if (member.id == memberId) {
-                        this.familyMembers.splice(index, 1);
-                    }
-                })
-            })
+    computed: {
+        allMembers() {
+            return this.$store.state.members;
         }
     }
 }

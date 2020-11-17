@@ -63,10 +63,7 @@
                     "Occupation": memberOccupation
                 };
 
-                MembersService.editMember(updatedMember).then(response => {
-                    this.modalOpen = false;;
-                })
-
+                this.$store.dispatch('editMember', updatedMember).then(res => { this.modalOpen = false; });
             }
         }
         

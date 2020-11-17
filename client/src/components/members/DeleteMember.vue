@@ -52,7 +52,7 @@
                     "Occupation": memberOccupation
                 };
 
-                this.$emit('memberDeleted', memberToDelete);
+                this.$store.dispatch('deleteMember', memberToDelete).then(res => this.closeModal());                
             }            
         }
         
