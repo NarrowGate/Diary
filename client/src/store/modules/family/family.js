@@ -1,14 +1,8 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-
-import MembersService from './services/MembersService.js';
+import MembersService from '../../../services/MembersService.js';
 
 
-Vue.use(Vuex);
-
-export const store =  new Vuex.Store({
+export default {
     state: {
-        test: 'ksksk',
         members:[]
     },
     mutations: {
@@ -63,4 +57,4 @@ export const store =  new Vuex.Store({
     },
     getters: {
     }
-})
+}

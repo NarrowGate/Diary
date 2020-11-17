@@ -57,7 +57,7 @@ export default {
     },
     computed: {
         allMembers() {
-            return this.$store.state.members;
+            return this.$store.state.family.members;
         }
     }
 }
