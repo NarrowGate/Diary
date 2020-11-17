@@ -56,5 +56,8 @@ export default {
         }
     },
     getters: {
+        allMembers(state) {
+            return state.members;
+        }
     }
 }

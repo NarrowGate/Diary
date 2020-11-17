@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="member of allMembers" :key="member.id" ref="member">
+            <tr v-for="member of members" :key="member.id" ref="member">
                 <td><input :value="member.id" name="id" class="" id="a" /></td>
                 <td><input :value="member.name" name="name" class="" id="b" /></td>
                 <td><input :value="member.role" name="role" class="" id="c" /></td>
@@ -38,6 +38,7 @@ import EditMember from './EditMember.vue';
 import DeleteMember from './DeleteMember.vue';
 import AddMember from './AddMember.vue';
 
+import { mapGetters } from 'vuex';
 
 export default {
 
@@ -46,20 +47,16 @@ export default {
         DeleteMember,
         AddMember
     },
-
-    data() {
-      return {
-        familyMembers: []
-      }
-    },
+    
     created: function () {
         this.$store.dispatch('getAllMembers');
     },
-    computed: {
-        allMembers() {
-            return this.$store.state.family.members;
-        }
-    }
+    computed: 
+        mapGetters({
+            members: 'allMembers'
+        })
+
+    
 }
 </script>
 
