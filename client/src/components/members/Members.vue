@@ -58,6 +58,9 @@ export default {
         MembersService.getMembers().then(response => {
             this.familyMembers = response.data;
         })
+
+        this.$store.dispatch('getAllMembers');
+
     },
     methods: {
         addMember: function (member) {
