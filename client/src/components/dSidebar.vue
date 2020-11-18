@@ -1,5 +1,8 @@
 <template>
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <v-card>
+            <v-card-title>sdfsdfs</v-card-title>
+        </v-card>
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
