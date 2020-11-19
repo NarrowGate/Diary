@@ -1,21 +1,30 @@
 <template>
-    <div>
+    <v-app>
         <d-header/>
-        <div class="container-fluid">
-            <div class="row">
-                <d-sidebar/>
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                        </div>
-                    </div>
-                    <router-view></router-view>
-                </main>
-            </div>
-        </div> 
+        <v-main class="text-left grey lighten-3 pt-0">
+            <v-container fluid>
+                <v-row>
+                    <v-col cols="3">
+                        <d-sidebar/>
+                    </v-col>
+                    <v-col cols="9">    
+                        <v-card color="green lighten-4">
+                            <v-subheader class="white--text">
+                                <h2>Heading
+                                    <v-divider></v-divider>                
+                                </h2>
+                            </v-subheader>
+                            <router-view></router-view>
+                        </v-card>                    
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-main> 
         <portal-target name="modals"></portal-target>   
-    </div>
+        <v-footer>
+            Footer
+        </v-footer>
+    </v-app>
 </template>
 
 <script>
