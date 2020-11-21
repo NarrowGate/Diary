@@ -102,6 +102,7 @@ export default {
     
     created: function () {
         this.$store.dispatch('getAllMembers');
+        // this.$store.dispatch('getUsers');
     },
     computed: 
         mapGetters({
