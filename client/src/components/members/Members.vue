@@ -1,7 +1,7 @@
 <template>
     <v-row>
         <v-col class="pa-6">
-        <v-toolbar-title>Members <add-member></add-member></v-toolbar-title>
+        <v-toolbar-title>Members<add-member></add-member></v-toolbar-title>
         <!-- <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -45,22 +45,18 @@
                 <th>Name</th>
                 <th>Role</th>
                 <th>Gender</th>
-                <th>Description</th>
-                <th>Occupation</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="member of members" :key="member.id" ref="member">
-                <td> {{member.id}} </td>
-                <td> {{member.name}} </td>
-                <td> {{member.role}} </td>
-                <td> {{member.gender}} </td>
-                <td> {{member.description}} </td>
-                <td> {{member.occupation}} </td>
+            <tr v-for="user of users" :key="user.id" ref="user">
+                <td> {{user.id}} </td>
+                <td> {{user.fname}} </td>
+                <td> {{user.role}} </td>
+                <td> {{user.gender}} </td>
                 <td class="d-flex justify-content-between">
-                    <edit-member :member="member"></edit-member>
-                    <delete-member :memberName="member.name"></delete-member>
+                    <edit-member :user="user"></edit-member>
+                    <delete-member :userName="user.fname"></delete-member>
                 </td>
             </tr>
         </tbody>
@@ -89,24 +85,16 @@ export default {
 
     data() {
         return {
-            headers: [
-                { text: 'Id', value: 'id'},
-                { text: 'Name', value: 'name'},
-                { text: 'Role', value: 'role'},
-                { text: 'Gender', value:'gender'},
-                { text: 'Description', value:'description'},
-                { text: 'Occupation', value: 'occupation'}
-            ]
         }
     },
     
     created: function () {
-        this.$store.dispatch('getAllMembers');
-        // this.$store.dispatch('getUsers');
+        // this.$store.dispatch('getAllMembers');
+        this.$store.dispatch('getUsers');
     },
     computed: 
         mapGetters({
-            members: 'allMembers'
+            users: 'allUsers'
         })
 
     

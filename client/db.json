@@ -1,56 +1,56 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "fname": "Melvin",
-            "lname": "Wilson",
-            "type": "admin",
-            "gender":"M",
-            "fgroup": "MANAGEMENT",
-            "role":"CEO",
-            "contact": {
-                "phone": "",
-                "address": ""
-            }
-        },
-        {
-            "id": 2,
-            "fname": "Reshma",
-            "lname": "Melvin",
-            "type": "user",
-            "gender":"F",
-            "fgroup": "HR",
-            "role":"MANAGER",
-            "contact": {
-                "phone": "",
-                "address": ""
-            }            
-        },
-        {
-            "id": 1,
-            "fname": "Novoselic",
-            "lname": "Melvin",
-            "type": "user",
-            "gender":"M",
-            "fgroup": "DEVELOPMENT",
-            "role":"ENGINEER",
-            "contact": {
-                "phone": "",
-                "address": ""
-            }
-        },
-        {
-            "id": 1,
-            "fname": "Elizabeth",
-            "lname": "Wilson",
-            "type": "user",
-            "gender":"F",
-            "fgroup": "MANAGEMENT",
-            "role":"MANAGER",
-            "contact": {
-                "phone": "",
-                "address": ""
-            }
-        }                        
-    ]
+  "users": [
+    {
+      "id": 1,
+      "fname": "Melvin",
+      "lname": "Wilson",
+      "type": "admin",
+      "gender": "M",
+      "fgroup": "MANAGEMENT",
+      "role": "CEO",
+      "contact": {
+        "phone": "",
+        "address": ""
+      }
+    },
+    {
+      "id": 2,
+      "fname": "Reshma",
+      "lname": "Melvin",
+      "type": "user",
+      "gender": "F",
+      "fgroup": "HR",
+      "role": "MANAGER",
+      "contact": {
+        "phone": "",
+        "address": ""
+      }
+    },
+    {
+      "fname": "ra",
+      "lname": "Melvin",
+      "type": "user",
+      "gender": "M",
+      "fgroup": "DEVELOPMENT",
+      "role": "ENGINEER",
+      "contact": {
+        "phone": "",
+        "address": ""
+      },
+      "id": 3
+    },
+    {
+      "id": 4,
+      "fname": "Elizabeth",
+      "lname": "Wilson",
+      "type": "user",
+      "gender": "F",
+      "fgroup": "MANAGEMENT",
+      "role": "MANAGER",
+      "contact": {
+        "phone": "",
+        "address": ""
+      }
+    }
+  ]
 }

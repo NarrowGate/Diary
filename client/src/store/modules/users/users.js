@@ -8,6 +8,8 @@ export default {
     mutations: {
         GET_USERS(state, users) {
             state.users = users;
+        },
+        EDIT_USER(state) {
         }
     },
 
@@ -16,10 +18,18 @@ export default {
             UsersService.getUsers().then(res => {
                 commit("GET_USERS", res.data);
             })
+        },
+        editUser( { commit, dispatch }, userId) {
+            UsersService.editUser(userId).then(res => {
+                dispatch("getUsers");
+            })
+
         }
     },
 
     getters: {
-
+        allUsers(state) {
+            return state.users;
+        }
     }
 }

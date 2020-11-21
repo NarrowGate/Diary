@@ -2,14 +2,12 @@
     <span class="edit d-flex justify-content-center align-items-center" title="Edit" @click="openModal">
         <i class="fas fa-pen"></i>
         <modal :open="modalOpen" @close="closeModal" @commit="save">
-            <template slot="title">Edit Member</template>
+            <template slot="title">Edit User</template>
             <template slot="body">
-                <input :value="member.id" name="id" class="" id="a" />
-                <input :value="member.name" name="name" class="" id="b" />
-                <input :value="member.role" name="role" class="" id="c" />
-                <input :value="member.gender" name="gender" class="" id="d" />
-                <input :value="member.description" name="description" class="" id="e" />
-                <input :value="member.occupation" name="occupation" class="" id="f" />
+                <input :value="user.id" name="id" class="" id="a" />
+                <input :value="user.name" name="name" class="" id="b" />
+                <input :value="user.role" name="role" class="" id="c" />
+                <input :value="user.gender" name="gender" class="" id="d" />
             </template>
         </modal>
     </span>      
@@ -17,7 +15,8 @@
 
 <script>
     import Modal from '../utilities/Modal.vue';
-    import MembersService from '../../services/MembersService.js';
+    // import MembersService from '../../services/MembersService.js';
+    import UsersService from '../../services/UsersService.js';
 
 
     export default {
@@ -32,7 +31,7 @@
             }
         },
 
-        props: ['member'],
+        props: ['user'],
 
         methods: {
 
@@ -47,23 +46,22 @@
             save() {
                 let modalDom = document.querySelector('.modal-body');
 
-                let memberId = modalDom.querySelector('input[name="id"]').value;
-                let memberName = modalDom.querySelector('input[name="name"]').value;
-                let memberRole = modalDom.querySelector('input[name="role"]').value;
-                let memberGender = modalDom.querySelector('input[name="gender"]').value;
-                let memberDescription = modalDom.querySelector('input[name="description"]').value;
-                let memberOccupation = modalDom.querySelector('input[name="occupation"]').value;
+                let userId = modalDom.querySelector('input[name="id"]').value;
+                let userName = modalDom.querySelector('input[name="name"]').value;
+                let userRole = modalDom.querySelector('input[name="role"]').value;
+                let userGender = modalDom.querySelector('input[name="gender"]').value;
 
-                let updatedMember = {
-                    "Id": memberId,
-                    "Name": memberName,
-                    "Role": memberRole,
-                    "Gender": memberGender,
-                    "Description": memberDescription,
-                    "Occupation": memberOccupation
+                let updatedUser = {
+                    "Id": userId,
+                    "Name": userName,
+                    "Role": userRole,
+                    "Gender": userGender
                 };
 
-                this.$store.dispatch('editMember', updatedMember).then(res => { this.modalOpen = false; });
+                // this.$store.dispatch('editUser', userId, updatedUser).then(res => { this.modalOpen = false; });
+                this.$store.dispatch('editUser', userId, updatedUser).then(res => {
+                    this.modalOpen = false;
+                });
             }
         }
         

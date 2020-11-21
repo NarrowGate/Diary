@@ -41,10 +41,7 @@ export default {
             }),
             headers: {'Content-Type': 'application/json'}
         })
-        .then(function(res){ debugger; return res.json(); })
-        .then(function(data){ debugger; alert( JSON.stringify( data ) ) })
-        
-        
+        .then(function(res){ debugger; return res.json(); })                
     },             
         
     getUsers() {
@@ -54,6 +51,41 @@ export default {
         }).catch(res => {
             console.log(res);
         })
-    }  
+    },
+    
+    editUser(id) {
+        return fetch("http://localhost:3000/users/3",
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                fname: "ra",
+                lname: "Melvin",
+                type: "user",
+                gender:"M",
+                fgroup: "DEVELOPMENT",
+                role:"ENGINEER",
+                contact: {
+                    phone: "",
+                    address: ""
+                }
+            }),
+            headers: {'Content-Type': 'application/json'}
+        })
+         .then(function(res){ return res.json(); })
+    }
 }
 
+
+// {
+//     "id": 3,
+//     "fname": "Novoselic",
+//     "lname": "Melvin",
+//     "type": "user",
+//     "gender": "M",
+//     "fgroup": "DEVELOPMENT",
+//     "role": "ENGINEER",
+//     "contact": {
+//       "phone": "",
+//       "address": ""
+//     }
+//   }
