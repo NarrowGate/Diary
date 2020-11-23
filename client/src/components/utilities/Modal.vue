@@ -1,5 +1,5 @@
 <template>
-    <portal to="modals" v-if="open">
+    <!-- <portal to="modals" v-if="open">
         <div class="modal fade show" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -21,7 +21,42 @@
                 </div>
             </div>
         </div>
-    </portal>
+    </portal> -->
+      <v-row justify="center">
+        <v-dialog
+            v-model="open"
+            persistent
+            max-width="600px"
+        >
+            <v-card>
+                <v-card-title>
+                    <slot name="title"></slot>
+                </v-card-title>
+                <v-card-text>
+                    <v-container>
+                        <slot name="body"></slot>
+                    </v-container>
+                </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                        color="blue darken-1"
+                        text
+                        @click="close"
+                    >
+                        Close
+                    </v-btn>
+                    <v-btn
+                        color="blue darken-1"
+                        text
+                        @click="save"
+                    >
+                        <slot name="oktext"></slot>
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+  </v-row>
 </template>
 
 <script>

@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "id": 1,
       "fname": "Melvin",
       "lname": "Wilson",
       "type": "admin",
       "gender": "M",
       "fgroup": "MANAGEMENT",
-      "role": "CEO",
+      "role": "---",
       "contact": {
         "phone": "",
         "address": ""
-      }
+      },
+      "id": 1
     },
     {
       "id": 2,
@@ -27,7 +27,7 @@
       }
     },
     {
-      "fname": "ra",
+      "fname": "Novoselic",
       "lname": "Melvin",
       "type": "user",
       "gender": "M",
@@ -51,6 +51,19 @@
         "phone": "",
         "address": ""
       }
+    },
+    {
+      "fname": "Noahhp6",
+      "lname": "Wilson",
+      "type": "admin",
+      "gender": "M",
+      "fgroup": "MANAGEMENT",
+      "role": "child",
+      "contact": {
+        "phone": "",
+        "address": ""
+      },
+      "id": 6
     }
   ]
 }

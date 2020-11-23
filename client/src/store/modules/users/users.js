@@ -9,7 +9,20 @@ export default {
         GET_USERS(state, users) {
             state.users = users;
         },
-        EDIT_USER(state) {
+        EDIT_USER(state, {id, user, res}) {
+            state.users.forEach(u => {
+                if(u.id === id) {
+                    u.fname = user.fname;
+                    u.lname = user.lname;
+                    u.type = user.type;
+                    u.gender = user.gender; 
+                    u.fgroup = user.fgroup;
+                    u.role = user.role;
+                    u.contact.phone = user.contact.phone;
+                    u.contact.address = user.contact.address;
+                    res();
+                }
+            });
         }
     },
 
@@ -19,12 +32,21 @@ export default {
                 commit("GET_USERS", res.data);
             })
         },
-        editUser( { commit, dispatch }, userId) {
-            UsersService.editUser(userId).then(res => {
-                dispatch("getUsers");
+        addUser( { commit, dispatch }, user) {
+            UsersService.addUser(user).then(res => {
+                dispatch('getUsers');
             })
-
-        }
+        },        
+        editUser( { commit, state }, {id, user, res}) {
+            UsersService.editUser(id, user, res).then(res => {
+                commit("EDIT_USER", {id, user, res})
+            })
+        },
+        deleteUser( { commit, dispatch }, id) {
+            UsersService.deleteUser(id).then(res => {
+                dispatch('getUsers');
+            })
+        }        
     },
 
     getters: {

@@ -9,70 +9,39 @@ const apiClient = axios.create({
     }
 })
 
-
 export default {
 
-    addUser() {
-        // let der = {
-        //     id: 56,
-        //     category: '',
-        //     organizer: "Ramu",
-        //     title: "",
-        //     description: "",
-        //     location: "",
-        //     date: "",
-        //     time: "",
-        //     attendees: []
-        // }
-        
-        fetch("http://localhost:3000/events/",
-        {
-            method: "POST",
-            body: JSON.stringify({
-                id:54,
-                category: '',
-                organizer: "Damu",
-                title: "",
-                description: "",
-                location: "",
-                date: "",
-                time: "",
-                attendees: []
-            }),
-            headers: {'Content-Type': 'application/json'}
-        })
-        .then(function(res){ debugger; return res.json(); })                
-    },             
+    addUser(user) {   
+        return apiClient.post('/users', user). then(res => {
+            console.log(res);
+            return res;
+        }).catch(res => {
+        })         
+    },         
         
     getUsers() {
         return apiClient.get('/users'). then(res => {
             console.log(res);
             return res;
         }).catch(res => {
-            console.log(res);
         })
     },
     
-    editUser(id) {
-        return fetch("http://localhost:3000/users/3",
-        {
-            method: "PUT",
-            body: JSON.stringify({
-                fname: "ra",
-                lname: "Melvin",
-                type: "user",
-                gender:"M",
-                fgroup: "DEVELOPMENT",
-                role:"ENGINEER",
-                contact: {
-                    phone: "",
-                    address: ""
-                }
-            }),
-            headers: {'Content-Type': 'application/json'}
+    editUser(id, user, res) {
+        return apiClient.put(`/users/${id}`, user). then(response => {
+            return res;
+        }).catch(res => {
         })
-         .then(function(res){ return res.json(); })
+    },
+
+    deleteUser(id) {
+        return apiClient.delete(`/users/${id}`). then(res => {
+            console.log(res);
+            return res;
+        }).catch(res => {
+        })
     }
+
 }
 
 
