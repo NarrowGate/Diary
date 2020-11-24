@@ -1,7 +1,7 @@
 <template>
     <v-row>
         <v-col class="pa-6">
-            <v-toolbar-title>Members<add-user></add-user></v-toolbar-title>
+            <v-toolbar-title>Users<add-user></add-user></v-toolbar-title>
             <br>
             <v-simple-table>
                 <template v-slot:default>

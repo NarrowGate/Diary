@@ -8,7 +8,7 @@
                 <v-col
                     cols="12"
                     sm="6"
-                    md="4"
+                    md="6"
                 >
                     <v-text-field
                         label="First Name"
@@ -21,7 +21,7 @@
                 <v-col
                     cols="12"
                     sm="6"
-                    md="4"
+                    md="6"
                 >
                     <v-text-field
                         label="Last Name"
@@ -34,7 +34,7 @@
                 <v-col
                     cols="12"
                     sm="6"
-                    md="4"                    
+                    md="12"                    
                 >
                     <!-- <v-text-field
                         label="Gender"
@@ -53,7 +53,7 @@
                 <v-col
                     cols="12"
                     sm="6"
-                    md="4"                    
+                    md="3"                    
                 >
                     <v-text-field
                         label="Phone"
@@ -66,7 +66,7 @@
                 <v-col
                     cols="12"
                     sm="6"
-                    md="4"                    
+                    md="9"                    
                 >
                     <v-text-field
                         label="Address"
@@ -118,7 +118,6 @@
                         :items="fgroups"
                         v-model="user.fgroup"
                         label="Group"
-                        dense
                     ></v-select>                       
                 </v-col>
             </v-row>
