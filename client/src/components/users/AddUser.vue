@@ -36,13 +36,19 @@
                     sm="6"
                     md="4"                    
                 >
-                    <v-text-field
+                    <!-- <v-text-field
                         label="Gender"
                         v-model="user.gender"
                         id="gender"
                         required
                     >
-                    </v-text-field>
+                    </v-text-field> -->
+                    <v-radio-group 
+                        row
+                        v-model="user.gender">
+                        <v-radio label="Male" value="M"></v-radio>
+                        <v-radio label="Female" value="F"></v-radio>
+                    </v-radio-group>                    
                 </v-col>                  
                 <v-col
                     cols="12"
@@ -101,13 +107,19 @@
                     sm="6"
                     md="4"
                 >
-                    <v-text-field
+                    <!-- <v-text-field
                         label="Group"
                         v-model="user.fgroup"
                         id="fgroup"
                         required
                     >
-                    </v-text-field>
+                    </v-text-field> -->
+                    <v-select
+                        :items="fgroups"
+                        v-model="user.fgroup"
+                        label="Group"
+                        dense
+                    ></v-select>                       
                 </v-col>
             </v-row>
         </template>
@@ -118,6 +130,8 @@
 
 <script>
 import Modal from '../utilities/Modal.vue';
+import { mapGetters } from 'vuex';
+
 
 export default {
     components: {
@@ -140,6 +154,10 @@ export default {
             modalOpen: false
         }
     },
+    computed: 
+        mapGetters({
+            fgroups: 'getAllFgroups'
+        }),
     methods: {
         openModal() {
             this.modalOpen = true;
@@ -150,19 +168,19 @@ export default {
         },
         addFn() {
             let newUser = {
-                fname: document.querySelector('#firstName').value,
-                lname: document.querySelector('#lastName').value,
-                type: document.querySelector('#type').value,
-                gender: document.querySelector('#gender').value,
-                fgroup: document.querySelector('#fgroup').value,
-                role: document.querySelector('#role').value,
+                fname:this.user.fname,
+                lname: this.user.lname,
+                type: this.user.type,
+                gender: this.user.gender,
+                fgroup: this.user.fgroup,
+                role: this.user.role,
                 contact: {
-                    phone: document.querySelector('#phone').value,
-                    address: document.querySelector('#address').value
+                    phone: this.user.contact.phone,
+                    address: this.user.contact.address
                 }
             };
 
-           this.$store.dispatch('addUser', newUser).then(res => this.closeModal());
+           this.$store.dispatch('addUser', newUser).then(res => { this.closeModal() });
         } 
     },
 };

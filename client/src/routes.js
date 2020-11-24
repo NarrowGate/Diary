@@ -1,9 +1,9 @@
 import User from './components/User.vue';
-import Members from './components/members/Members.vue';
+import Users from './components/users/Users.vue';
 
 export const routes = [
     { path:'/user', component: User },
-    { path:'/members', component: Members }
+    { path:'/users', component: Users }
 ];
 
 // 557 to 562

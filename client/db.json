@@ -5,8 +5,8 @@
       "lname": "Wilson",
       "type": "admin",
       "gender": "M",
-      "fgroup": "MANAGEMENT",
-      "role": "---",
+      "fgroup": "Developer",
+      "role": "UI Developer",
       "contact": {
         "phone": "",
         "address": ""
@@ -14,24 +14,24 @@
       "id": 1
     },
     {
-      "id": 2,
       "fname": "Reshma",
       "lname": "Melvin",
-      "type": "user",
+      "type": "sdfsd",
       "gender": "F",
-      "fgroup": "HR",
-      "role": "MANAGER",
+      "fgroup": "Team Lead",
+      "role": "HR Manager",
       "contact": {
-        "phone": "",
-        "address": ""
-      }
+        "phone": "434",
+        "address": "dfs"
+      },
+      "id": 2
     },
     {
       "fname": "Novoselic",
       "lname": "Melvin",
       "type": "user",
       "gender": "M",
-      "fgroup": "DEVELOPMENT",
+      "fgroup": "Tester",
       "role": "ENGINEER",
       "contact": {
         "phone": "",
@@ -40,30 +40,90 @@
       "id": 3
     },
     {
-      "id": 4,
       "fname": "Elizabeth",
       "lname": "Wilson",
       "type": "user",
       "gender": "F",
-      "fgroup": "MANAGEMENT",
-      "role": "MANAGER",
-      "contact": {
-        "phone": "",
-        "address": ""
-      }
-    },
-    {
-      "fname": "Noahhp6",
-      "lname": "Wilson",
-      "type": "admin",
-      "gender": "M",
-      "fgroup": "MANAGEMENT",
-      "role": "child",
+      "fgroup": "Team Lead",
+      "role": "Housing Manager",
       "contact": {
         "phone": "",
         "address": ""
       },
+      "id": 4
+    },
+    {
+      "fname": "Agnes",
+      "lname": "Biju",
+      "type": "sdfsd",
+      "gender": "F",
+      "fgroup": "Sales",
+      "role": "dsd",
+      "contact": {
+        "phone": "434",
+        "address": "dfs"
+      },
+      "id": 5
+    },
+    {
+      "fname": "Team",
+      "lname": "Lead",
+      "type": "dddd",
+      "gender": "M",
+      "fgroup": "Team Lead",
+      "role": "ijio",
+      "contact": {
+        "phone": "45645",
+        "address": "kljsdkll"
+      },
       "id": 6
+    },
+    {
+      "fname": "Biju",
+      "lname": "John",
+      "type": "23423",
+      "gender": "M",
+      "fgroup": "Designer",
+      "role": "dfsdfs",
+      "contact": {
+        "phone": "12354",
+        "address": "sdf sdsdf"
+      },
+      "id": 7
+    },
+    {
+      "fname": "Steve",
+      "lname": "Biju",
+      "type": "df3r4",
+      "gender": "M",
+      "fgroup": "Designer",
+      "role": "Musician",
+      "contact": {
+        "phone": "23423",
+        "address": "dfdsfs"
+      },
+      "id": 8
+    },
+    {
+      "fname": "Anoosha",
+      "lname": "Clarance",
+      "type": "sdfsd",
+      "gender": "F",
+      "fgroup": "Developer",
+      "role": "dsdf dfsd",
+      "contact": {
+        "phone": "515165",
+        "address": "sdf sdf"
+      },
+      "id": 9
     }
+  ],
+  "functiongroups": [
+    "Developer",
+    "Designer",
+    "Team Lead",
+    "Tester",
+    "Marketing",
+    "Sales"
   ]
 }

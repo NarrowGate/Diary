@@ -5,6 +5,7 @@
                 <v-divider></v-divider>                
             </h2>
         </v-subheader>
+        <br>
         <v-list class="transparent">
             <v-list-item-group>
                 <v-list-item>
@@ -27,9 +28,9 @@
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>
-                            <router-link to="/members" tag="li" active-class="active" exact>
+                            <router-link to="/users" tag="li" active-class="active" exact>
                                 <a class="nav-link white--text text-decoration-none">
-                                    Members
+                                    Users
                                 </a>
                             </router-link>
                         </v-list-item-title>

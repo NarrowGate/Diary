@@ -9,11 +9,11 @@
                     </v-col>
                     <v-col cols="9">    
                         <v-card color="green lighten-4">
-                            <v-subheader class="white--text">
+                            <!-- <v-subheader class="white--text">
                                 <h2>Heading
                                     <v-divider></v-divider>                
                                 </h2>
-                            </v-subheader>
+                            </v-subheader> -->
                             <router-view></router-view>
                         </v-card>                    
                     </v-col>

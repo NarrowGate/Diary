@@ -3,13 +3,15 @@ import Vuex from 'vuex';
 
 import family from './modules/family/family.js'
 import users from './modules/users/users.js'
+import fgroups from './modules/fgroups/fgroups.js'
 
 Vue.use(Vuex);
 
 export const store =  new Vuex.Store({
     modules: {
         family,
-        users
+        users,
+        fgroups
     },
     state: {
     }

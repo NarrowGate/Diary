@@ -14,8 +14,7 @@
                     >
                         <v-text-field
                             label="First Name"
-                            :value="user.fname"
-                            id="firstName"
+                            v-model="editedUser.fname"
                             required
                         >
                         </v-text-field>
@@ -27,8 +26,7 @@
                     >
                         <v-text-field
                             label="Last Name"
-                            :value="user.lname"
-                            id="lastName"
+                            v-model="editedUser.lname"
                             required
                         >
                         </v-text-field>
@@ -38,13 +36,12 @@
                         sm="6"
                         md="4"                    
                     >
-                        <v-text-field
-                            label="Gender"
-                            :value="user.gender"
-                            id="gender"
-                            required
-                        >
-                        </v-text-field>
+                        <v-radio-group 
+                            row
+                            v-model="editedUser.gender">
+                            <v-radio label="Male" value="M"></v-radio>
+                            <v-radio label="Female" value="F"></v-radio>
+                        </v-radio-group>
                     </v-col>                  
                     <v-col
                         cols="12"
@@ -53,8 +50,7 @@
                     >
                         <v-text-field
                             label="Phone"
-                            :value="user.contact.phone"
-                            id="phone"
+                            v-model="editedUser.contact.phone"
                             required
                         >
                         </v-text-field>
@@ -66,8 +62,7 @@
                     >
                         <v-text-field
                             label="Address"
-                            :value="user.contact.address"
-                            id="address"
+                            v-model="editedUser.contact.address"
                             required
                         >
                         </v-text-field>
@@ -79,8 +74,7 @@
                     >
                         <v-text-field
                             label="Type"
-                            :value="user.type"
-                            id="type"
+                            v-model="editedUser.type"
                             required
                         >
                         </v-text-field>
@@ -92,8 +86,7 @@
                     >
                         <v-text-field
                             label="Role"
-                            :value="user.role"
-                            id="role"
+                            v-model="editedUser.role"
                             required
                         >
                         </v-text-field>
@@ -103,13 +96,12 @@
                         sm="6"
                         md="4"
                     >
-                        <v-text-field
+                        <v-select
+                            :items="allFgroups"
+                            v-model="editedUser.fgroup"
                             label="Group"
-                            :value="user.fgroup"
-                            id="fgroup"
-                            required
-                        >
-                        </v-text-field>
+                            dense
+                        ></v-select>                        
                     </v-col>
                 </v-row>
             </template>
@@ -127,62 +119,53 @@
 
 
     export default {
-
         components: {
             Modal
         },
-
         data() {
             return {
-                modalOpen: false
+                modalOpen: false,
+                editedUser: {}
             }
         },
-
         props: ['user'],
-
-// watch: {
-//     loading: (nw, old) => {
-//         if(!nw) {
-//             this.closeModal()
-//         }
-//     }
-// },
+        computed:
+            mapGetters({
+                allFgroups: 'getAllFgroups'
+            }),
+        created() {
+            this.editedUser = Object.assign({}, this.user);
+        },
         methods: {
-
             openModal() {
                 this.modalOpen = true;
             },
-
             closeModal() {
                 console.log('ksksk');
                 this.modalOpen = false;
             },            
-
             save() {
                 let updatedUser = {
-                    fname: document.querySelector('#firstName').value,
-                    lname: document.querySelector('#lastName').value,
-                    type: document.querySelector('#type').value,
-                    gender: document.querySelector('#gender').value,
-                    fgroup: document.querySelector('#fgroup').value,
-                    role: document.querySelector('#role').value,
+                    fname: this.editedUser.fname,
+                    lname: this.editedUser.lname,
+                    type: this.editedUser.type,
+                    gender: this.editedUser.gender,
+                    fgroup: this.editedUser.fgroup,
+                    role: this.editedUser.role,
                     contact: {
-                        phone: document.querySelector('#phone').value,
-                        address: document.querySelector('#address').value
+                        phone: this.editedUser.contact.phone,
+                        address: this.editedUser.contact.address
                     }
-                }
-                let proom = new Promise((res, rej) => {
+                }                
+                let savePr = new Promise((res, rej) => {
                     this.$store.dispatch('editUser', { id : this.user.id, user: updatedUser, res : res })
                 });
 
-                proom.then(() => {
-                    this.closeModal();
-                    
+                savePr.then(() => {
+                    this.closeModal();                    
                 })
-                // this.$store.dispatch('editUser', { id : this.user.id, user: updatedUser })
             }
-        }
-        
+        }        
     }
 </script>
 
