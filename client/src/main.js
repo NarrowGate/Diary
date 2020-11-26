@@ -14,6 +14,12 @@ const router = new VueRouter({
   routes
 });
 
+router.beforeEach((to, from, next) => {
+  const App_NAME = "Kradle" 
+  document.title = `${App_NAME} ${to.name}`;
+  next();
+})
+
 new Vue({
   el: '#elDemo',
   router,
