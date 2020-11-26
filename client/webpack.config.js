@@ -104,6 +104,23 @@ module.exports = {
   //   noInfo: true,
   //   overlay: true   
   // },
+
+  // alt + cmd + shift + arrow down multiple cursor
+  // alt + click multi select
+  // cmd L select line
+
+  // alt + cmd + square bracket expand collapse
+  // cmd K + cmd 0 to collapse all cmd K + cmd + j expand all
+
+  // shift + alt arrow to copy line
+  // cmd [ tab cmd ] tab
+  // cmd shift p Command Palette
+
+  // ctrl ` show hide terminal
+  // cmd b sidebar
+
+  // cmd K + cmd F close project
+
   performance: {
     hints: false
   },
