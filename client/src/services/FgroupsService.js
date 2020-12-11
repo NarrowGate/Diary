@@ -18,5 +18,12 @@ export default {
         }).catch(res => {
         })
     },
+    addFgroup(fgroup) { 
+        return apiClient.post('/functiongroups', fgroup). then(res => {
+            console.log(res);
+            return res;
+        }).catch(res => {
+        })         
+    }
 
 }

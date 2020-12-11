@@ -97,7 +97,7 @@
                         md="4"
                     >
                         <v-select
-                            :items="allFgroups"
+                            :items="fgroupNames"
                             v-model="editedUser.fgroup"
                             label="Group"                            
                         ></v-select>                        
@@ -130,7 +130,8 @@
         props: ['user'],
         computed:
             mapGetters({
-                allFgroups: 'getAllFgroups'
+                allFgroups: 'getAllFgroups',
+                fgroupNames: 'getAllFgroupsName'
             }),
         created() {
             this.editedUser = Object.assign({}, this.user);

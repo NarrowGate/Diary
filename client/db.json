@@ -70,7 +70,7 @@
       "lname": "Lead",
       "type": "dddd",
       "gender": "M",
-      "fgroup": "Team Lead",
+      "fgroup": "Sales",
       "role": "ijio",
       "contact": {
         "phone": "45645",
@@ -119,11 +119,40 @@
     }
   ],
   "functiongroups": [
-    "Developer",
-    "Designer",
-    "Team Lead",
-    "Tester",
-    "Marketing",
-    "Sales"
+    {
+      "id": 1,
+      "name": "Developer",
+      "description": "Function Group's name is Developer"
+    },
+    {
+      "id": 2,
+      "name": "Designer",
+      "description": "Function Group's name is Designer"
+    },
+    {
+      "id": 3,
+      "name": "Team Lead",
+      "description": "Function Group's name is Team Lead"
+    },
+    {
+      "id": 4,
+      "name": "Tester",
+      "description": "Function Group's name is Tester"
+    },
+    {
+      "id": 5,
+      "name": "Marketing",
+      "description": "Function Group's name is Marketing"
+    },
+    {
+      "id": 6,
+      "name": "Sales",
+      "description": "Function Group's name is Sales"
+    },
+    {
+      "name": "Dummy Group",
+      "description": "Dummy group description",
+      "id": 7
+    }
   ]
 }
