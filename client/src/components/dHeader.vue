@@ -18,16 +18,41 @@
                 Admin
             </a>
         </router-link>
+        <v-spacer></v-spacer>
+        <a class="text-decoration-none" v-if="isLoggedIn" @click="logout">
+            Hi, {{userName}}
+        </a>   
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="text-decoration-none" v-if="isLoggedIn" @click="logout">
+            Logout
+        </a>
     </v-app-bar>
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
+
     export default {
-data() {
-    return {        
-        homeLink : { name: "Home" },
-        adminLink : { name: "Admin" }
-    }
-},
+        data() {
+            return {        
+                homeLink : { name: "Home" },
+                adminLink : { name: "Admin" }
+            }
+        },
+
+        computed: 
+            mapGetters({
+                isLoggedIn: 'isUserLoggedIn',
+                userName: 'userName'
+            }),
+        
+        methods: {
+            logout() {
+                this.$store.commit('LOGOUT');
+                this.$router.push({ name: 'Login' })
+            }
+        }
+
     }
 </script>

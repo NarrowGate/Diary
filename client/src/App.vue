@@ -1,13 +1,13 @@
 <template>
-    <index-page></index-page>
+    <index></index>
 </template>
 
 <script>
-    import IndexPage from './views/IndexPage.vue';
+    import Index from './views/Index.vue';
 
     export default {
         components: {
-            IndexPage
+            Index
         }
     }
 </script>

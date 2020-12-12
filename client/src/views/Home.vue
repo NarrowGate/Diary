@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <div>
         <d-header/>
         <v-main class="text-left grey lighten-3 pt-0">
             <v-container fluid>
@@ -24,17 +24,20 @@
         <v-footer>
             Footer
         </v-footer>
-    </v-app>
+    </div>
 </template>
 
 <script>
     import dSidebar from '../components/dSidebar.vue';
     import dHeader from '../components/dHeader.vue';
-
-    export default {
+export default {
         components: {
             dHeader,
             dSidebar
         }
-    }
+}
 </script>
+
+<style>
+
+</style>
