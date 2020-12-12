@@ -1,0 +1,158 @@
+{
+  "users": [
+    {
+      "fname": "Melvin",
+      "lname": "Wilson",
+      "type": "admin",
+      "gender": "M",
+      "fgroup": "Developer",
+      "role": "UI Developer",
+      "contact": {
+        "phone": "",
+        "address": ""
+      },
+      "id": 1
+    },
+    {
+      "fname": "Reshma",
+      "lname": "Melvin",
+      "type": "sdfsd",
+      "gender": "F",
+      "fgroup": "Team Lead",
+      "role": "HR Manager",
+      "contact": {
+        "phone": "434",
+        "address": "dfs"
+      },
+      "id": 2
+    },
+    {
+      "fname": "Novoselic",
+      "lname": "Melvin",
+      "type": "user",
+      "gender": "M",
+      "fgroup": "Tester",
+      "role": "ENGINEER",
+      "contact": {
+        "phone": "",
+        "address": ""
+      },
+      "id": 3
+    },
+    {
+      "fname": "Elizabeth",
+      "lname": "Wilson",
+      "type": "user",
+      "gender": "F",
+      "fgroup": "Team Lead",
+      "role": "Housing Manager",
+      "contact": {
+        "phone": "",
+        "address": ""
+      },
+      "id": 4
+    },
+    {
+      "fname": "Agnes",
+      "lname": "Biju",
+      "type": "sdfsd",
+      "gender": "F",
+      "fgroup": "Sales",
+      "role": "dsd",
+      "contact": {
+        "phone": "434",
+        "address": "dfs"
+      },
+      "id": 5
+    },
+    {
+      "fname": "Team",
+      "lname": "Lead",
+      "type": "dddd",
+      "gender": "M",
+      "fgroup": "Sales",
+      "role": "ijio",
+      "contact": {
+        "phone": "45645",
+        "address": "kljsdkll"
+      },
+      "id": 6
+    },
+    {
+      "fname": "Biju",
+      "lname": "John",
+      "type": "23423",
+      "gender": "M",
+      "fgroup": "Designer",
+      "role": "dfsdfs",
+      "contact": {
+        "phone": "12354",
+        "address": "sdf sdsdf"
+      },
+      "id": 7
+    },
+    {
+      "fname": "Steve",
+      "lname": "Biju",
+      "type": "df3r4",
+      "gender": "M",
+      "fgroup": "Designer",
+      "role": "Musician",
+      "contact": {
+        "phone": "23423",
+        "address": "dfdsfs"
+      },
+      "id": 8
+    },
+    {
+      "fname": "Anoosha",
+      "lname": "Clarance",
+      "type": "sdfsd",
+      "gender": "F",
+      "fgroup": "Developer",
+      "role": "dsdf dfsd",
+      "contact": {
+        "phone": "515165",
+        "address": "sdf sdf"
+      },
+      "id": 9
+    }
+  ],
+  "functiongroups": [
+    {
+      "id": 1,
+      "name": "Developer",
+      "description": "Function Group's name is Developer"
+    },
+    {
+      "id": 2,
+      "name": "Designer",
+      "description": "Function Group's name is Designer"
+    },
+    {
+      "id": 3,
+      "name": "Team Lead",
+      "description": "Function Group's name is Team Lead"
+    },
+    {
+      "id": 4,
+      "name": "Tester",
+      "description": "Function Group's name is Tester"
+    },
+    {
+      "id": 5,
+      "name": "Marketing",
+      "description": "Function Group's name is Marketing"
+    },
+    {
+      "id": 6,
+      "name": "Sales",
+      "description": "Function Group's name is Sales"
+    },
+    {
+      "name": "Dummy Group",
+      "description": "Dummy group description",
+      "id": 7
+    }
+  ]
+}

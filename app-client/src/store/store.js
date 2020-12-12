@@ -13,7 +13,7 @@ export const store =  new Vuex.Store({
         family,
         users,
         fgroups,
-        loggedInUsersto
+        loggedInUser
     },
     state: {
     }
