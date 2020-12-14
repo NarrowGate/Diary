@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Modal from '../utilities/Modal.vue';
+import Modal from '@/components/utilities/Modal.vue';
 import { mapGetters } from 'vuex';
 
 
@@ -74,7 +74,7 @@ export default {
                 description: this.newFunctionGroup.description
             };
 
-           this.$store.dispatch('addFgroup', newFgroup).then(res => { 
+           this.$store.dispatch('addFgroup', newFgroup).then(() => { 
                this.closeModal(); 
                this.newFunctionGroup.name= ""; 
                this.newFunctionGroup.description= "" 

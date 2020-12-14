@@ -1,11 +1,11 @@
-import User from './components/User.vue';
-import Users from './components/users/Users.vue';
-import FunctionGroups from './components/users/FunctionGroups.vue';
-import Admin from './components/users/Admin.vue';
-import Home from './views/Home.vue';
-import Login from './views/Login.vue';
+import Profile from '@/components/profile/Profile.vue';
+import Users from '@/components/users/Users.vue';
+import FunctionGroups from '@/components/functionGroups/FunctionGroups.vue';
+import Admin from '@/components/users/Admin.vue';
+import Home from '@/views/Home.vue';
+import Login from '@/views/Login.vue';
 
-import { store } from './store/store.js';
+import { store } from '@/store/store.js';
 
 
 
@@ -35,9 +35,9 @@ export const routes = [
                 component: Admin
              },
              { 
-                path:'/user', 
-                name: 'User', 
-                component: User 
+                path:'/profile', 
+                name: 'Profile', 
+                component: Profile 
             },  
             { 
                 path:'/users', 
@@ -58,11 +58,7 @@ export const routes = [
         path:'/login', 
         name: 'Login', 
         component: Login 
-    },    
-
-
-
-
+    }
 ];
 
 // 557 to 562

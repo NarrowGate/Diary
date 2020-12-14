@@ -28,14 +28,15 @@
 </template>
 
 <script>
-    import dSidebar from '@/components/dSidebar.vue';
-    import dHeader from '@/components/dHeader.vue';
-export default {
+    import dSidebar from '@/components/common/dSidebar.vue';
+    import dHeader from '@/components/common/dHeader.vue';
+    
+    export default {
         components: {
             dHeader,
             dSidebar
         }
-}
+    }
 </script>
 
 <style>

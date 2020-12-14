@@ -128,61 +128,60 @@
 </template>
 
 <script>
-import Modal from '@/components/utilities/Modal.vue';
-import { mapGetters } from 'vuex';
+    import Modal from '@/components/utilities/Modal.vue';
+    import { mapGetters } from 'vuex';
 
-
-export default {
-    components: {
-        Modal
-    },
-    data() {
-        return {
-            user: {
-                fname:'',
-                lname: '',
-                type: '',
-                gender: '',
-                fgroup: '',
-                role:'',
-                contact: {
-                    phone:'',
-                    address:''
-                }
+    export default {
+        components: {
+            Modal
+        },
+        data() {
+            return {
+                user: {
+                    fname:'',
+                    lname: '',
+                    type: '',
+                    gender: '',
+                    fgroup: '',
+                    role:'',
+                    contact: {
+                        phone:'',
+                        address:''
+                    }
+                },
+                modalOpen: false
+            }
+        },
+        computed: 
+            mapGetters({
+                fgroups: 'getAllFgroups'
+            }),
+        methods: {
+            openModal() {
+                this.modalOpen = true;
             },
-            modalOpen: false
-        }
-    },
-    computed: 
-        mapGetters({
-            fgroups: 'getAllFgroups'
-        }),
-    methods: {
-        openModal() {
-            this.modalOpen = true;
-        },
 
-        closeModal() {
-            this.modalOpen = false;
-        },
-        addFn() {
-            let newUser = {
-                fname:this.user.fname,
-                lname: this.user.lname,
-                type: this.user.type,
-                gender: this.user.gender,
-                fgroup: this.user.fgroup,
-                role: this.user.role,
-                contact: {
-                    phone: this.user.contact.phone,
-                    address: this.user.contact.address
-                }
-            };
+            closeModal() {
+                this.modalOpen = false;
+            },
+            addFn() {
+                let newUser = {
+                    fname:this.user.fname,
+                    lname: this.user.lname,
+                    type: this.user.type,
+                    gender: this.user.gender,
+                    fgroup: this.user.fgroup,
+                    role: this.user.role,
+                    contact: {
+                        phone: this.user.contact.phone,
+                        address: this.user.contact.address
+                    }
+                };
 
-           this.$store.dispatch('addUser', newUser).then(() => { this.closeModal() });
-        } 
-    },
-};
+            this.$store.dispatch('addUser', newUser).then(() => { this.closeModal() });
+            } 
+        },
+    };
 </script>
 
 <style lang="scss">

@@ -51,8 +51,8 @@
             return {
                 sidebarItems: [
                     {
-                        title: 'Roles',
-                        to: { name : 'User' },
+                        title: 'Profile',
+                        to: { name : 'Profile' },
                         icon: 'mdi-face-profile'
                     },
                     {
