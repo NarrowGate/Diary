@@ -55,6 +55,11 @@ export default {
     getters: {
         allUsers(state) {
             return state.users;
+        },
+        getUser(state) {
+            return (id) => {
+                return state.users.find(user =>  (user.id === id))
+            }
         }
     }
 }

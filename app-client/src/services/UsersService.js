@@ -15,7 +15,7 @@ export default {
         return apiClient.post('/users', user). then(res => {
             console.log(res);
             return res;
-        }).catch(res => {
+        }).catch(() => {
         })         
     },         
         
@@ -23,14 +23,14 @@ export default {
         return apiClient.get('/users'). then(res => {
             console.log(res);
             return res;
-        }).catch(res => {
+        }).catch(() => {
         })
     },
     
     editUser(id, user, res) {
-        return apiClient.put(`/users/${id}`, user). then(response => {
+        return apiClient.put(`/users/${id}`, user). then(() => {
             return res;
-        }).catch(res => {
+        }).catch(() => {
         })
     },
 
@@ -38,7 +38,7 @@ export default {
         return apiClient.delete(`/users/${id}`). then(res => {
             console.log(res);
             return res;
-        }).catch(res => {
+        }).catch(() => {
         })
     }
 

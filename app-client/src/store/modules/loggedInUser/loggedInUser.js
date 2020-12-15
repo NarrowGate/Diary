@@ -2,19 +2,21 @@
 export default {
 
     state : {
-        user: ['Melvin']
+        user: []
     },
 
     mutations: {
         LOGOUT(state) {
             state.user = [];
+        },
+        LOGIN_USER(state, user) {
+            state.user = [];
+            state.user.push(user);
         }
     },
 
     actions: {
-        // retreiveUser({ commit, dispatch }, user) {
-        //     dispatch()
-        // }
+
     },
 
     getters: {
