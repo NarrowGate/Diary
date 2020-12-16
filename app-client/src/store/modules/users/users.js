@@ -28,9 +28,10 @@ export default {
     },
 
     actions: {
-        getUsers({ commit }) {
+        getUsers({ commit }, resPr) {
             UsersService.getUsers().then(res => {
                 commit("GET_USERS", res.data);
+                if(resPr) resPr();
             })
         },
         addUser( { dispatch }, user) {

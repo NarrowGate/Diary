@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div style="height: 100%;">
         <d-header/>
-        <v-main class="text-left grey lighten-3 pt-0">
+        <v-main class="text-left grey lighten-3 pt-0" style="height: calc(100% - 100px)">
             <v-container fluid>
                 <v-row>
                     <v-col cols="3">

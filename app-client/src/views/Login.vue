@@ -47,8 +47,11 @@
       closeModal() {
         alert('close login')        
       },
-      login() {
-        this.$store.dispatch('getUsers').then(() => {
+      login() {                
+        let getUsersPR = new Promise((resPr) => {
+          this.$store.dispatch('getUsers', resPr)
+        });
+        getUsersPR.then(() => {
           this.allUsers.forEach(user => {
             if(user.email === this.username) {
               let userObj = this.getUser(user.id);
