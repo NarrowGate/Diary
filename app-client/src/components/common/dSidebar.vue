@@ -51,12 +51,12 @@
             return {
                 sidebarItems: [
                     {
-                        title: 'Profile',
+                        title: 'My Profile',
                         to: { name : 'Profile' },
                         icon: 'mdi-face-profile'
                     },
                     {
-                        title: 'Users',
+                        title: 'Employees',
                         to: { name : 'Users' },
                         icon: 'mdi-account-multiple'
                     },

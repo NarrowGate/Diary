@@ -2,16 +2,16 @@
 export default {
 
     state : {
-        user: []
+        user: 0
     },
 
     mutations: {
         LOGOUT(state) {
-            state.user = [];
+            state.user = 0;
         },
-        LOGIN_USER(state, user) {
-            state.user = [];
-            state.user.push(user);
+        LOGIN_USER(state, u) {
+            state.user = 0;
+            state.user = u.id;
         }
     },
 
@@ -21,11 +21,17 @@ export default {
 
     getters: {
         isUserLoggedIn(state) {
-            return state.user.length;
+            return state.user > 0 ;
         },
-        userName(state) {
-            return state.user[0];
+        loggedInUserId(state) {
+            return state.user;
         }
+        // userName(state) {
+        //     return state.user[0].fname;
+        // },
+        // loggedInUser(state) {
+        //     return state.user[0];
+        // }
     }
 
 }

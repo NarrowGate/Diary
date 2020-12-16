@@ -10,17 +10,12 @@ import { store } from '@/store/store.js';
 
 
 let checkSignedInFn = (next) => {
-
     let loggedInUser = store.state.loggedInUser.user;
-    if(loggedInUser.length) {
-        console.log('userIn');
+    if(loggedInUser > 0) {
         next();
     } else {
-        console.log('userOut');
         next({ name: 'Login' })
     }
-
-
 }
 
 export const routes = [
@@ -32,17 +27,26 @@ export const routes = [
             { 
                 path:'/admin', 
                 name: 'Admin', 
-                component: Admin
+                component: Admin,
+                beforeEnter: (to, from, next) => {
+                    checkSignedInFn(next);
+                }                
              },
              { 
                 path:'/profile', 
                 name: 'Profile', 
-                component: Profile 
+                component: Profile,
+                beforeEnter: (to, from, next) => {
+                    checkSignedInFn(next);
+                }                
             },  
             { 
                 path:'/users', 
                 name: 'Users', 
-                component: Users 
+                component: Users,
+                beforeEnter: (to, from, next) => {
+                    checkSignedInFn(next);
+                }
             },     
             { 
                 path:'/fgroups', 
@@ -50,7 +54,7 @@ export const routes = [
                 component: FunctionGroups,
                 beforeEnter: (to, from, next) => {
                     checkSignedInFn(next);
-                } 
+                }
             },                              
         ] 
     },

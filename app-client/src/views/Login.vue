@@ -50,7 +50,7 @@
       login() {
         this.$store.dispatch('getUsers').then(() => {
           this.allUsers.forEach(user => {
-            if(user.fname === this.username) {
+            if(user.email === this.username) {
               let userObj = this.getUser(user.id);
               this.$store.commit('LOGIN_USER', userObj);
               this.modalOpen = false;

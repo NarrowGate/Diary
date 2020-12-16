@@ -150,6 +150,7 @@
                     gender: this.editedUser.gender,
                     fgroup: this.editedUser.fgroup,
                     role: this.editedUser.role,
+                    email: this.editedUser.email,
                     contact: {
                         phone: this.editedUser.contact.phone,
                         address: this.editedUser.contact.address

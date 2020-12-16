@@ -19,10 +19,9 @@
             </a>
         </router-link>
         <v-spacer></v-spacer>
-        <a class="text-decoration-none" v-if="isLoggedIn" @click="logout">
-            Hi, {{userName}}
+        <a class="text-decoration-none pr-5" v-if="isLoggedIn" @click="logout">
+            Hi, {{getUser(userId).fname}}
         </a>   
-        &nbsp;&nbsp;&nbsp;&nbsp;
         <a class="text-decoration-none" v-if="isLoggedIn" @click="logout">
             Logout
         </a>
@@ -44,7 +43,9 @@ import { mapGetters } from 'vuex';
         computed: 
             mapGetters({
                 isLoggedIn: 'isUserLoggedIn',
-                userName: 'userName'
+                userName: 'userName',
+                getUser: 'getUser',
+                userId: 'loggedInUserId'
             }),
         
         methods: {

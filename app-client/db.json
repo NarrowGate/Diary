@@ -7,9 +7,10 @@
       "gender": "M",
       "fgroup": "Developer",
       "role": "UI Developer",
+      "email": "melvin.wilson@gmail.com",
       "contact": {
-        "phone": "",
-        "address": ""
+        "phone": "+61410839139",
+        "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
       },
       "id": 1
     },
@@ -20,9 +21,10 @@
       "gender": "F",
       "fgroup": "Team Lead",
       "role": "HR Manager",
+      "email": "reshma.melvin@gmail.com",
       "contact": {
-        "phone": "434",
-        "address": "dfs"
+        "phone": "+61403352590",
+        "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
       },
       "id": 2
     },
@@ -32,10 +34,11 @@
       "type": "user",
       "gender": "M",
       "fgroup": "Tester",
-      "role": "ENGINEER",
+      "role": "Student",
+      "email": "novoselic.melvin@gmail.com",
       "contact": {
-        "phone": "",
-        "address": ""
+        "phone": "+61410839139",
+        "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
       },
       "id": 3
     },
@@ -45,10 +48,11 @@
       "type": "user",
       "gender": "F",
       "fgroup": "Team Lead",
-      "role": "Housing Manager",
+      "role": "Housing Wife",
+      "email": "elizabeth.wilson@gmail.com",
       "contact": {
-        "phone": "",
-        "address": ""
+        "phone": "+61416100347",
+        "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
       },
       "id": 4
     },
@@ -58,10 +62,11 @@
       "type": "sdfsd",
       "gender": "F",
       "fgroup": "Sales",
-      "role": "dsd",
+      "role": "ACFI Coordinator",
+      "email": "agnes.biju@gmail.com",
       "contact": {
-        "phone": "434",
-        "address": "dfs"
+        "phone": "+61403195651",
+        "address": "48 Lagoon Crescent, Bellbowrie, 4070, QLDs"
       },
       "id": 5
     },
@@ -72,6 +77,7 @@
       "gender": "M",
       "fgroup": "Sales",
       "role": "ijio",
+      "email": "team.lead@gmail.com",
       "contact": {
         "phone": "45645",
         "address": "kljsdkll"
@@ -84,23 +90,25 @@
       "type": "23423",
       "gender": "M",
       "fgroup": "Designer",
-      "role": "dfsdfs",
+      "role": "Creative Director",
+      "email": "biju.john@gmail.com",
       "contact": {
-        "phone": "12354",
-        "address": "sdf sdsdf"
+        "phone": "+61410081635",
+        "address": "48 Lagoon Crescent, Bellbowrie, 4070, QLD"
       },
       "id": 7
     },
     {
       "fname": "Steve",
-      "lname": "Biju",
+      "lname": "John",
       "type": "df3r4",
       "gender": "M",
       "fgroup": "Designer",
-      "role": "Musician",
+      "role": "Sound Artist",
+      "email": "steve.john@gmail.com",
       "contact": {
-        "phone": "23423",
-        "address": "dfdsfs"
+        "phone": "+61490484413",
+        "address": "48 Lagoon Crescent, Bellbowrie, 4070, QLD"
       },
       "id": 8
     },
@@ -110,12 +118,55 @@
       "type": "sdfsd",
       "gender": "F",
       "fgroup": "Developer",
-      "role": "dsdf dfsd",
+      "role": "Electronics Engineer",
+      "email": "anoosha.clarance@gmail.com",
       "contact": {
-        "phone": "515165",
-        "address": "sdf sdf"
+        "phone": "+918156925081",
+        "address": "Marriott Bengaluru, Rajajinagar, 560010"
       },
       "id": 9
+    },
+    {
+      "fname": "Stephanie",
+      "lname": "John",
+      "type": "",
+      "gender": "F",
+      "fgroup": "",
+      "role": "Slime Artist",
+      "email": "stephanie.john@gmail.com",
+      "contact": {
+        "phone": "+61490484413",
+        "address": "48 Lagoon Crescent, Bellbowrie, 4070, QLD"
+      },
+      "id": 10
+    },
+    {
+      "fname": "Mary",
+      "lname": "Clarance",
+      "type": "",
+      "gender": "F",
+      "fgroup": "",
+      "role": "Entreprenuer",
+      "email": "mary.clarance@gmail.com",
+      "contact": {
+        "phone": "+919526855526",
+        "address": "Kembiri Road, Pandikudy, Kochi, 682002"
+      },
+      "id": 11
+    },
+    {
+      "fname": "Clarance",
+      "lname": "Clarance",
+      "type": "",
+      "gender": "M",
+      "fgroup": "",
+      "role": "Entreprenuer",
+      "email": "clarance.clarance@gmail.com",
+      "contact": {
+        "phone": "+919526028958",
+        "address": "Kembiri Road, Pandikudy, Kochi, 682002"
+      },
+      "id": 12
     }
   ],
   "functiongroups": [

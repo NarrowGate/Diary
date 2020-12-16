@@ -18,6 +18,7 @@ export default {
                     u.gender = user.gender; 
                     u.fgroup = user.fgroup;
                     u.role = user.role;
+                    u.email = user.email;
                     u.contact.phone = user.contact.phone;
                     u.contact.address = user.contact.address;
                     res();
