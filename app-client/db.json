@@ -17,13 +17,13 @@
     {
       "fname": "Reshma",
       "lname": "Melvin",
-      "type": "sdfsd",
-      "gender": "F",
-      "fgroup": "Team Lead",
-      "role": "HR Manager",
+      "type": "admin",
+      "gender": "M",
+      "fgroup": "Developer",
+      "role": "UI Developer",
       "email": "reshma.melvin@gmail.com",
       "contact": {
-        "phone": "+61403352590",
+        "phone": "+61410839139",
         "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
       },
       "id": 2
@@ -69,20 +69,6 @@
         "address": "48 Lagoon Crescent, Bellbowrie, 4070, QLDs"
       },
       "id": 5
-    },
-    {
-      "fname": "Team",
-      "lname": "Lead",
-      "type": "dddd",
-      "gender": "M",
-      "fgroup": "Sales",
-      "role": "ijio",
-      "email": "team.lead@gmail.com",
-      "contact": {
-        "phone": "45645",
-        "address": "kljsdkll"
-      },
-      "id": 6
     },
     {
       "fname": "Biju",

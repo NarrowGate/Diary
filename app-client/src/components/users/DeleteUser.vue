@@ -2,14 +2,14 @@
     <span class="delete d-flex" style="align-items: center;" title="Delete" @click="openModal">
         <i class="far fa-trash-alt"></i>
         <modal :open="modalOpen" @close="closeModal" @commit="delFn">
-            <template slot="title">Delete {{this.user.fname}}?</template>
+            <template slot="title">Delete {{this.member.fname}}?</template>
             <template slot="oktext">Delete</template>
         </modal>
     </span>
 </template>
 
 <script>
-    import Modal from '../utilities/Modal.vue';
+    import Modal from '@/components/utilities/Modal.vue';
 
     export default {
         components: {
@@ -21,7 +21,7 @@
             }
         },
         props: {
-            user: {
+            member: {
                 type: Object
             }
         },
@@ -35,7 +35,7 @@
             },    
 
             delFn() {
-                this.$store.dispatch('deleteUser', this.user.id);
+                this.$store.dispatch('deleteMember', this.member.id);
             }            
         }
         

@@ -58,8 +58,8 @@ export default {
         }
     },
     getters: {
-        allMembers(state) {
-            return state.members;
-        }
+        // allMembers(state) {
+        //     return state.members;
+        // }
     }
 }

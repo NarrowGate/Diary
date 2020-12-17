@@ -11,15 +11,15 @@ const apiClient = axios.create({
 
 export default {
 
-    addUser(user) {   
-        return apiClient.post('/users', user). then(res => {
+    addMember(member) {   
+        return apiClient.post('/users', member). then(res => {
             console.log(res);
             return res;
         }).catch(() => {
         })         
     },         
         
-    getUsers() {
+    getMembers() {
         return apiClient.get('/users'). then(res => {
             console.log(res);
             return res;
@@ -27,14 +27,14 @@ export default {
         })
     },
     
-    editUser(id, user, res) {
-        return apiClient.put(`/users/${id}`, user). then(() => {
+    editMember(id, member) {
+        return apiClient.put(`/users/${id}`, member). then((res) => {
             return res;
         }).catch(() => {
         })
     },
 
-    deleteUser(id) {
+    deleteMember(id) {
         return apiClient.delete(`/users/${id}`). then(res => {
             console.log(res);
             return res;

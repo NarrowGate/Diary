@@ -39,28 +39,23 @@
       }
     },
     computed: 
-      mapGetters({
-        allUsers : 'allUsers',
-        getUser: 'getUser'
-      }),      
+      mapGetters( 'member', ['allMembers', 'getMember'] ),      
     methods: {
       closeModal() {
         alert('close login')        
       },
       login() {                
-        let getUsersPR = new Promise((resPr) => {
-          this.$store.dispatch('getUsers', resPr)
-        });
-        getUsersPR.then(() => {
-          this.allUsers.forEach(user => {
-            if(user.email === this.username) {
-              let userObj = this.getUser(user.id);
-              this.$store.commit('LOGIN_USER', userObj);
-              this.modalOpen = false;
-              this.$router.push({ name: 'Home'});
-            }
-          });
-        });
+        this.$store.dispatch('member/getMembers')
+          .then(() => {
+            this.allMembers.forEach(user => {
+              if(user.email === this.username) {
+                let userObj = this.getMember(user.id);
+                this.$store.commit('LOGIN_USER', userObj);
+                this.modalOpen = false;
+                this.$router.push({ name: 'Home'});
+              }
+            });
+          })
       }
     },
   }

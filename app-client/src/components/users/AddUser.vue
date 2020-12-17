@@ -178,7 +178,7 @@
                     }
                 };
 
-            this.$store.dispatch('addUser', newUser).then(() => { this.closeModal() });
+            this.$store.dispatch('addMember', newUser).then(() => { this.closeModal() });
             } 
         },
     };

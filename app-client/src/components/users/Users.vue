@@ -15,14 +15,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="user of users" :key="user.id" ref="user">
-                            <td> {{user.id}} </td>
-                            <td> {{user.fname}} </td>
-                            <td> {{user.role}} </td>
-                            <td> {{user.gender}} </td>
+                        <tr v-for="member of allMembers" :key="member.id" ref="user">
+                            <td> {{member.id}} </td>
+                            <td> {{member.fname}} </td>
+                            <td> {{member.role}} </td>
+                            <td> {{member.gender}} </td>
                             <td class="d-flex justify-content-between">
-                                <edit-user :user="user"></edit-user>
-                                <delete-user :user="user"></delete-user>
+                                <edit-user :member="member"></edit-user>
+                                <delete-user :member="member"></delete-user>
                             </td>
                         </tr>
                     </tbody>
@@ -54,14 +54,12 @@ export default {
     },
     
     created: function () {
-        // this.$store.dispatch('getAllMembers');
-        this.$store.dispatch('getUsers');
+        this.$store.dispatch('member/getMembers');
         this.$store.dispatch('getFgroups');
     },
     computed: 
-        mapGetters({
-            users: 'allUsers'
-        })
+        mapGetters('member', ['allMembers'])
+    
 
 }
 </script>

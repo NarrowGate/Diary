@@ -100,14 +100,15 @@
         }
       }
     },
-    computed:
-      mapGetters({
-        loggedInUserId: 'loggedInUserId',
-        getUser: 'getUser'
-      }),
+    computed: {
+      ...mapGetters('member', ['getMember']),
+      ...mapGetters({
+        loggedInUserId: 'loggedInUserId'
+      })
+    },
     created() {
 
-      let loggedInUser = this.getUser(this.loggedInUserId);
+      let loggedInUser = this.getMember(this.loggedInUserId);
 
       this.user.fname = loggedInUser.fname;
       this.user.lname = loggedInUser.lname;
@@ -122,7 +123,7 @@
     save() {
       console.log(this.user);
       let saveProfile = new Promise(res => {
-        this.$store.dispatch('editUser',{ id : this.loggedInUserId, user: this.user, res : res })
+        this.$store.dispatch('editMember',{ id : this.loggedInUserId, user: this.user, res : res })
       });
     saveProfile.then(() => {
       console.log('Profile updated');

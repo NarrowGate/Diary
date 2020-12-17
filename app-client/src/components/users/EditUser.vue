@@ -125,14 +125,14 @@
                 editedUser: {}
             }
         },
-        props: ['user'],
+        props: ['member'],
         computed:
             mapGetters({
                 allFgroups: 'getAllFgroups',
                 fgroupNames: 'getAllFgroupsName'
             }),
         created() {
-            this.editedUser = Object.assign({}, this.user);
+            this.editedUser = Object.assign({}, this.member);
         },
         methods: {
             openModal() {
@@ -155,14 +155,19 @@
                         phone: this.editedUser.contact.phone,
                         address: this.editedUser.contact.address
                     }
-                }                
-                let savePr = new Promise((res) => {
-                    this.$store.dispatch('editUser', { id : this.user.id, user: updatedUser, res : res })
-                });
+                };
+                
+                this.$store.dispatch('editMember', { id : this.member.id, member: updatedUser })
+                    .then(() => this.closeModal());
+                
 
-                savePr.then(() => {
-                    this.closeModal();                    
-                })
+                // let savePr = new Promise((res) => {
+                //     this.$store.dispatch('editMember', { id : this.member.id, member: updatedUser, res : res })
+                // });
+
+                // savePr.then(() => {
+                //     this.closeModal();                    
+                // })
             }
         }        
     }
