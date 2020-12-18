@@ -43,15 +43,15 @@ import { mapGetters } from 'vuex';
         computed: {
             ...mapGetters('member', ['getMember']),
             ...mapGetters({
-                isLoggedIn: 'isUserLoggedIn',
+                isLoggedIn: 'user/isUserLoggedIn',
                 userName: 'userName',
-                userId: 'loggedInUserId'
+                userId: 'user/loggedInUserId'
             })
         },
         
         methods: {
             logout() {
-                this.$store.commit('LOGOUT');
+                this.$store.commit('user/LOGOUT');
                 this.$router.push({ name: 'Login' })
             }
         }

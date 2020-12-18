@@ -45,12 +45,12 @@
         alert('close login')        
       },
       login() {                
-        this.$store.dispatch('member/getMembers')
+        this.$store.dispatch('member/getAll')
           .then(() => {
             this.allMembers.forEach(user => {
               if(user.email === this.username) {
                 let userObj = this.getMember(user.id);
-                this.$store.commit('LOGIN_USER', userObj);
+                this.$store.commit('user/LOGIN_USER', userObj);
                 this.modalOpen = false;
                 this.$router.push({ name: 'Home'});
               }

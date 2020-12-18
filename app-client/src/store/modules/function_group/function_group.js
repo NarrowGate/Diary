@@ -1,27 +1,29 @@
-import fGroupService from '../../../services/FgroupsService.js';
+import fGroupService from '@/services/function_group.js';
 
 
 export default {
+
+    namespaced : true,
+    
     state: {
         fgroups: []
     },
 
     mutations: {
-        GET_FGROUPS(state, data) {
+        GET_ALL(state, data) {
             state.fgroups = data;
         }
     },
 
     actions: {
-        getFgroups({commit}) {
-            fGroupService.getFgroups().then(data => {
-                commit("GET_FGROUPS", data)
+        getAll({ commit }) {
+            return fGroupService.getAll().then(data => {
+                commit("GET_ALL", data)
             })
         },
-        addFgroup( { dispatch }, fgroup) {
-            fGroupService.addFgroup(fgroup).then(res => {
-                console.log(res);
-                dispatch('getFgroups');
+        add( { dispatch }, fgroup) {
+            return fGroupService.add(fgroup).then(() => {
+                dispatch('getAll');
             })
         },         
     },

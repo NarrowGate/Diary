@@ -1,6 +1,7 @@
 {
-  "users": [
+  "members": [
     {
+      "id": 1,
       "fname": "Melvin",
       "lname": "Wilson",
       "type": "admin",
@@ -11,17 +12,15 @@
       "contact": {
         "phone": "+61410839139",
         "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
-      },
-      "id": 1
+      }
     },
     {
-      "fname": "Reshma",
+      "fname": "Reshmaa",
       "lname": "Melvin",
       "type": "admin",
       "gender": "M",
       "fgroup": "Developer",
       "role": "UI Developer",
-      "email": "reshma.melvin@gmail.com",
       "contact": {
         "phone": "+61410839139",
         "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
@@ -190,6 +189,11 @@
       "name": "Dummy Group",
       "description": "Dummy group description",
       "id": 7
+    },
+    {
+      "name": "DemmyG",
+      "description": "",
+      "id": 8
     }
   ]
 }

@@ -103,7 +103,7 @@
     computed: {
       ...mapGetters('member', ['getMember']),
       ...mapGetters({
-        loggedInUserId: 'loggedInUserId'
+        loggedInUserId: 'user/loggedInUserId'
       })
     },
     created() {
@@ -121,13 +121,10 @@
     },
   methods: {
     save() {
-      console.log(this.user);
-      let saveProfile = new Promise(res => {
-        this.$store.dispatch('editMember',{ id : this.loggedInUserId, user: this.user, res : res })
-      });
-    saveProfile.then(() => {
-      console.log('Profile updated');
-    })
+      this.$store.dispatch('member/edit',{ id : this.loggedInUserId, member: this.user })
+        .then(() => {
+          console.log('Profile updated');
+        })
     }
   }
   }

@@ -1,6 +1,8 @@
 
 export default {
 
+    namespaced: true,
+    
     state : {
         user: 0
     },

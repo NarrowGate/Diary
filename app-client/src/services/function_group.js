@@ -12,19 +12,14 @@ const apiClient = axios.create({
 
 export default {
 
-    getFgroups() {
+    getAll() {
         return apiClient.get('/functiongroups'). then(res => {
             return res.data;
-        }).catch(res => {
-            console.log(res);
         })
     },
-    addFgroup(fgroup) { 
+    add(fgroup) { 
         return apiClient.post('/functiongroups', fgroup). then(res => {
-            console.log(res);
             return res;
-        }).catch(res => {
-            console.log(res);
         })         
     }
 

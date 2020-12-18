@@ -41,11 +41,11 @@
 
     computed: 
       mapGetters({
-        fgroups: "getAllFgroups"
+        fgroups: "functionGroup/getAllFgroups"
       }),
 
     created() {
-      this.$store.dispatch('getFgroups');
+      this.$store.dispatch('functionGroup/getAll');
     }
   }
 </script>

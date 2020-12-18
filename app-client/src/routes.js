@@ -10,7 +10,7 @@ import { store } from '@/store/store.js';
 
 
 let checkSignedInFn = (next) => {
-    let loggedInUser = store.state.loggedInUser.user;
+    let loggedInUser = store.state.user.user;
     if(loggedInUser > 0) {
         next();
     } else {

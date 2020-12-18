@@ -128,8 +128,8 @@
         props: ['member'],
         computed:
             mapGetters({
-                allFgroups: 'getAllFgroups',
-                fgroupNames: 'getAllFgroupsName'
+                allFgroups: 'functionGroup/getAllFgroups',
+                fgroupNames: 'functionGroup/getAllFgroupsName'
             }),
         created() {
             this.editedUser = Object.assign({}, this.member);
@@ -139,7 +139,6 @@
                 this.modalOpen = true;
             },
             closeModal() {
-                console.log('ksksk');
                 this.modalOpen = false;
             },            
             save() {
@@ -157,7 +156,7 @@
                     }
                 };
                 
-                this.$store.dispatch('editMember', { id : this.member.id, member: updatedUser })
+                this.$store.dispatch('member/edit', { id : this.member.id, member: updatedUser })
                     .then(() => this.closeModal());
                 
 

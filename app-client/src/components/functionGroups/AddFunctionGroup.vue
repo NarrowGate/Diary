@@ -58,7 +58,7 @@ export default {
     },
     computed: 
         mapGetters({
-            fgroups: 'getAllFgroups'
+            fgroups: 'functionGroup/getAllFgroups'
         }),
     methods: {
         openModal() {
@@ -74,7 +74,7 @@ export default {
                 description: this.newFunctionGroup.description
             };
 
-           this.$store.dispatch('addFgroup', newFgroup).then(() => { 
+           this.$store.dispatch('functionGroup/add', newFgroup).then(() => { 
                this.closeModal(); 
                this.newFunctionGroup.name= ""; 
                this.newFunctionGroup.description= "" 

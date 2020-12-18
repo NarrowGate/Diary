@@ -35,7 +35,7 @@
             },    
 
             delFn() {
-                this.$store.dispatch('deleteMember', this.member.id);
+                this.$store.dispatch('member/delete', this.member.id);
             }            
         }
         

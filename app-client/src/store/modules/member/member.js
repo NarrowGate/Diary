@@ -1,4 +1,4 @@
-import UsersService from '@/services/UsersService.js';
+import memberService from '@/services/member.js';
 
 export default {
 
@@ -9,10 +9,10 @@ export default {
     },
 
     mutations: {
-        GET_MEMBERS(state, members) {
+        GET_ALL(state, members) {
             state.members = members;
         },
-        EDIT_MEMBER(state, {id, member}) {
+        EDIT(state, {id, member}) {
             state.members.forEach(u => {
                 if(u.id === id) {
                     u.fname = member.fname;
@@ -30,26 +30,24 @@ export default {
     },
 
     actions: {
-        getMembers({ commit }) {
-            return UsersService.getMembers().then(res => {
-                commit("GET_MEMBERS", res.data);
+        getAll({ commit }) {
+            return memberService.getAll().then(res => {
+                commit("GET_ALL", res.data);
             })
         },
-        addMember( { dispatch }, member) {
-            UsersService.addMember(member).then(res => {
-                console.log(res);
-                dispatch('getMembers');
+        add( { dispatch }, member) {
+            memberService.add(member).then(() => {
+                dispatch('getAll');
             })
         },        
-        editMember( { commit }, {id, member}) {
-            return UsersService.editMember(id, member).then(() => {
-                commit("EDIT_MEMBER", {id, member})
+        edit( { commit }, {id, member}) {
+            return memberService.edit(id, member).then(() => {
+                commit("EDIT", {id, member})
             })
         },
-        deleteMember( { dispatch }, id) {
-            UsersService.deleteMember(id).then(res => {
-                console.log(res);
-                dispatch('getMembers');
+        delete( { dispatch }, id) {
+            memberService.delete(id).then(() => {
+                dispatch('getAll');
             })
         }        
     },
@@ -67,6 +65,20 @@ export default {
 }
 
 // {
+//     "id": 1,
+//     "fname": "Melvin",
+//     "lname": "Wilson",
+//     "type": "admin",
+//     "gender": "M",
+//     "fgroup": "Developer",
+//     "role": "UI Developer",
+//     "email": "melvin.wilson@gmail.com",
+//     "contact": {
+//       "phone": "+61410839139",
+//       "address": "U1/3a, Thompson Street, Silkstone, 4304, QLD"
+//     }
+//   },
+//   {
 //     "id": 2,
 //     "fname": "Reshma",
 //     "lname": "Melvin",

@@ -154,7 +154,7 @@
         },
         computed: 
             mapGetters({
-                fgroups: 'getAllFgroups'
+                fgroups: 'functionGroup/getAllFgroups'
             }),
         methods: {
             openModal() {
@@ -178,7 +178,7 @@
                     }
                 };
 
-            this.$store.dispatch('addMember', newUser).then(() => { this.closeModal() });
+            this.$store.dispatch('member/add', newUser).then(() => { this.closeModal() });
             } 
         },
     };

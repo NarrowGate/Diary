@@ -54,8 +54,8 @@ export default {
     },
     
     created: function () {
-        this.$store.dispatch('member/getMembers');
-        this.$store.dispatch('getFgroups');
+        this.$store.dispatch('member/getAll');
+        this.$store.dispatch('functionGroup/getAll');
     },
     computed: 
         mapGetters('member', ['allMembers'])
